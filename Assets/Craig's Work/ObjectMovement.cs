@@ -4,9 +4,10 @@ using UnityEngine.InputSystem;
 public class ObjectMovement : MonoBehaviour
 {
     public float speed = 5f;
-
+    public float minX, maxX;
     Vector2 _direction;
     public Rigidbody2D rb;
+
     public void OnMove(InputAction.CallbackContext context)
     {
         Debug.Log(context.ReadValue<Vector2>());
@@ -23,8 +24,21 @@ public class ObjectMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // movement for platform
-        transform.Translate(_direction * (speed * Time.deltaTime));
+        transform.Translate(_direction * (speed * Time.deltaTime));// movement
+
+        if (transform.position.x < minX)// points to not go out of the level
+        {
+            var newPos = transform.position;
+            newPos.x = minX;
+            transform.position = newPos;
+        }
+
+        if (transform.position.x > maxX)
+        {
+            var newPos = transform.position;
+            newPos.x = maxX;
+            transform.position = newPos;
+        }
 
         /*if (Input.GetKey(KeyCode.RightArrow))
         {

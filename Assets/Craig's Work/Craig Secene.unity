@@ -1632,7 +1632,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObjectMovement
   speed: 5
-  rb: {fileID: 0}
+  minX: -7.6
+  maxX: 6.4
+  rb: {fileID: 1131859931}
 --- !u!114 &1131859930
 MonoBehaviour:
   m_ObjectHideFlags: 0
