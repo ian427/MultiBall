@@ -655,7 +655,7 @@ MonoBehaviour:
   - {fileID: 1250737132}
   - {fileID: 2080095092}
   - {fileID: 2118463283}
-  spawnAmount: 3
+  spawnAmount: 4
   respawnTime: 5
 --- !u!4 &356040908
 Transform:
