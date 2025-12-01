@@ -7,19 +7,20 @@ public class BallColorChecker : MonoBehaviour
     public bool yellowColor;
     public bool redColor;
     public bool greenColor;
-    public bool purpleColor;
-    public bool orangeColor;
-    public bool pinkColor;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public bool allColoursPicked;
+
+    private void Start()
     {
-        
+        allColoursPicked = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(blueColor == true && yellowColor == true && redColor == true && greenColor == true)
+        {
+            allColoursPicked = true;
+        }
     }
 }

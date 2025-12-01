@@ -27,111 +27,53 @@ public class TrailRendererColour : MonoBehaviour
 
     private void SetStartColour()
     {
-        randomNumber = Random.Range(1, 8);
-
-        if(randomNumber == 1)
+        for (int i = 0; i < 4; i++)
         {
-            if(colorName != "Blue")
+            randomNumber = Random.Range(1, 5);
+
+            if(randomNumber == 1 && bcc.blueColor == false)
             {
                 tr.startColor = Color.blue;
                 colorName = "Blue";
                 bcc.blueColor = true;
+                return;
             }
 
-            else
-            {
-                SetStartColour();
-            }
-        }
-
-        if(randomNumber == 2)
-        {
-            if(colorName != "Yellow")
+            if (randomNumber == 2 && bcc.yellowColor == false)
             {
                 tr.startColor = Color.yellow;
                 colorName = "Yellow";
                 bcc.yellowColor = true;
+                return;
             }
 
-            else
-            {
-                SetStartColour();
-            }
-        }
-
-        if(randomNumber == 3)
-        {
-            if(colorName != "Red")
+            if (randomNumber == 3 && bcc.redColor == false)
             {
                 tr.startColor = Color.red;
                 colorName = "Red";
                 bcc.redColor = true;
+                return;
             }
 
-            else
-            {
-                SetStartColour();
-            }
-        }
-
-        if(randomNumber == 4)
-        {
-            if(colorName != "Green")
+            if (randomNumber == 4 && bcc.greenColor == false)
             {
                 tr.startColor = Color.green;
                 colorName = "Green";
                 bcc.greenColor = true;
-            }
-
-            else
-            {
-                SetStartColour();
+                return;
             }
         }
 
-        if (randomNumber == 5)
+        bcc.allColoursPicked = true;
+        ReturnData();
+
+    }
+
+    private void ReturnData()
+    {
+        if(bcc.allColoursPicked == true)
         {
-            if(colorName != "Purple")
-            {
-                tr.startColor = Color.purple;
-                colorName = "Purple";
-                bcc.purpleColor = true;
-            }
-
-            else
-            {
-                SetStartColour();
-            }
-        }
-
-        if(randomNumber == 6)
-        {
-            if(colorName != "Orange")
-            {
-                tr.startColor = Color.orange;
-                colorName = "Orange";
-                bcc.orangeColor = true;
-            }
-
-            else
-            {
-                SetStartColour();
-            }
-        }
-
-        if(randomNumber == 7)
-        {
-            if(colorName != "Pink")
-            {
-                tr.startColor = Color.pink;
-                colorName = "Pink";
-                bcc.pinkColor = true;
-            }
-
-            else
-            {
-                SetStartColour();
-            }
+            Debug.Log("No Colours Left");
         }
     }
 }

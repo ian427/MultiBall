@@ -606,9 +606,7 @@ MonoBehaviour:
   yellowColor: 0
   redColor: 0
   greenColor: 0
-  purpleColor: 0
-  orangeColor: 0
-  pinkColor: 0
+  allColoursPicked: 0
 --- !u!1 &816711121
 GameObject:
   m_ObjectHideFlags: 0
