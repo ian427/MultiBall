@@ -1,13 +1,15 @@
-using UnityEngine;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEngine;
 public class HealthDown : MonoBehaviour
 {
     [SerializeField] private int LivesLeft = 3;
     [SerializeField] private List<GameObject> HealthObjects = new List<GameObject>();
+    public GameManager manager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        manager = GameObject.Find("Manager").GetComponent<GameManager>();
     }
     private void OnTriggerEnter2D(Collider2D obj)
     {
@@ -24,8 +26,8 @@ public class HealthDown : MonoBehaviour
         {
           if (LivesLeft < 0 || LivesLeft == 0)
           {
-            Debug.Log("Gameover");
-
+            //Debug.Log("Gameover");
+            manager.GameOver();
           }
         
         }
