@@ -8,8 +8,10 @@ public class Score : MonoBehaviour
     private int Seconds;
     private int Total;
     public bool Stopclock = false;
+    public BackgroundTransition manager;
     private void Start()
     {
+        manager = GameObject.Find("Manager").GetComponent<BackgroundTransition>();
         StartScore();
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -24,6 +26,7 @@ public class Score : MonoBehaviour
         {
             Seconds = 0;
             Minutes++;
+            manager.SwitchBackground();
         }
         Seconds++;
         Total++;

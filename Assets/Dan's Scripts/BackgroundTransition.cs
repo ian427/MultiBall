@@ -10,7 +10,7 @@ public class BackgroundTransition : MonoBehaviour
     public GameObject volcanoBG;
 
     [SerializeField] private Animator anim;
-    public float number;
+    [SerializeField] private float number;
     private string name;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -128,4 +128,5 @@ public class BackgroundTransition : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         anim.SetBool("Switching", false);
     }
+    
 }

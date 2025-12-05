@@ -13,8 +13,9 @@ public class HealthDown : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D obj)
     {
-        Destroy(obj.gameObject);
-       // HealthObjects.Remove(HealthObjects[LivesLeft])
+        // Destroy(obj.gameObject);
+        obj.gameObject.SetActive(false);
+        // HealthObjects.Remove(HealthObjects[LivesLeft])
         Destroy(HealthObjects[(LivesLeft-1)].gameObject);
         LivesLeft--;
         //Debug.Log("triggered");

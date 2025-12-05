@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public DataSerilizer Data;
     public Score score;
-    [SerializeField] private int alphavalue ;
+    //[SerializeField] private int alphavalue ;
     [SerializeField] private TextMeshProUGUI HighScoretxt;
     [SerializeField] private TextMeshProUGUI CurrentScoretxt;
     //public float FadeDelay = 1f;
