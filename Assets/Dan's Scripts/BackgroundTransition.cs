@@ -10,9 +10,10 @@ public class BackgroundTransition : MonoBehaviour
     public GameObject volcanoBG;
 
     [SerializeField] private Animator anim;
-    [SerializeField] private float number;
+    [SerializeField] private int number;
     private string name;
-
+    [SerializeField]
+    private Spawnpointhandler Spawn;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -21,7 +22,7 @@ public class BackgroundTransition : MonoBehaviour
         arcticBG.SetActive(false);
         jungleBG.SetActive(false);
         volcanoBG.SetActive(false);
-
+        Spawn = GameObject.Find("Manager").GetComponent<Spawnpointhandler>();
         anim.SetBool("Switching", false);
         name = "Default";
     }
@@ -41,7 +42,7 @@ public class BackgroundTransition : MonoBehaviour
     {
         anim.SetBool("Switching", true);
         RandomNumber();
-
+        Spawn.UpdateBackground(number);
         if(number == 1)
         {
             if(name != "Desert")
