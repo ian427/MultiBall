@@ -893,6 +893,7 @@ GameObject:
   - component: {fileID: 356040910}
   - component: {fileID: 356040911}
   - component: {fileID: 356040912}
+  - component: {fileID: 356040913}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -1018,6 +1019,23 @@ MonoBehaviour:
   volcanoBG: {fileID: 412697199}
   anim: {fileID: 2072034372}
   number: 0
+--- !u!114 &356040913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 356040906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db04448ba9b4fcc409241b0f173abb7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BallColorChecker
+  blueColor: 0
+  yellowColor: 0
+  redColor: 0
+  greenColor: 0
+  allColoursPicked: 0
 --- !u!1 &412697199
 GameObject:
   m_ObjectHideFlags: 0

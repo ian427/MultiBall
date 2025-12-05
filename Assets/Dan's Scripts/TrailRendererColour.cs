@@ -20,11 +20,7 @@ public class TrailRendererColour : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    
     private void SetStartColour()
     {
         for (int i = 0; i < 4; i++)
