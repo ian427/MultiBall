@@ -1,30 +1,32 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class GameManager : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public DataSerilizer Data;
     public Score score;
-    
+    [SerializeField] private int alphavalue ;
     [SerializeField] private TextMeshProUGUI HighScoretxt;
     [SerializeField] private TextMeshProUGUI CurrentScoretxt;
-    public float FadeDelay = 1f;
-    public float AlphaValue = 0;
-    public GameObject Pannel;
-    SpriteRenderer SpriteRenderer;
+    //public float FadeDelay = 1f;
+    //public float AlphaValue = 0;
+    [SerializeField] public Canvas Pannel;
+    //private Image image;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         score = GetComponent<Score>();
         Data = GameObject.Find("DataHolder").GetComponent<DataSerilizer>();
-        SpriteRenderer = Pannel.GetComponent<SpriteRenderer>();
+        //Pannel.enabled = true;
     }
 
 
     public void GameOver()
     {
-        StartCoroutine(FadeTo(AlphaValue, FadeDelay));
+        Pannel.enabled = true;
+        score.Stopclock = true;
         int Highscore = Data.GetHighTime();
         int newscore = score.GetScore();
         if(newscore > Highscore)
@@ -67,18 +69,6 @@ public class GameManager : MonoBehaviour
         }
        
     }
-    private System.Collections.IEnumerator FadeTo(float aValue, float FadeTime)
-    {
-        float alpha = SpriteRenderer.color.a;
-        for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / FadeTime)
-        {
-
-            Color NewColor = new Color(SpriteRenderer.color.r, SpriteRenderer.color.g, SpriteRenderer.color.b, Mathf.Lerp(alpha, aValue, t));
-            SpriteRenderer.color = NewColor;
-            yield return null;
-
-
-        }
-    }
+   
 
 }

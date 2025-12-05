@@ -7,6 +7,7 @@ public class Score : MonoBehaviour
     private int Minutes;
     private int Seconds;
     private int Total;
+    public bool Stopclock = false;
     private void Start()
     {
         StartScore();
@@ -28,7 +29,10 @@ public class Score : MonoBehaviour
         Total++;
         Timer.text = Minutes + ":" + Seconds;
         yield return new WaitForSeconds(1f);
-        StartCoroutine(goScore());
+        if (!Stopclock)
+        {
+            StartCoroutine(goScore());
+        }
     }
     public int GetScore()
     {
