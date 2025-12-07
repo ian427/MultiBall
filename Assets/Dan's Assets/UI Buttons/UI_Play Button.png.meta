@@ -3,8 +3,8 @@ guid: 97d7455f34c6db24e86199cced6f0334
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4306414620939005387
-    second: Mask group (1)_0
+      213: -8780444255853679206
+    second: UI_Play Button_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -97,7 +97,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: WebGL
+    buildTarget: iOS
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Mask group (1)_0
+      name: UI_Play Button_0
       rect:
         serializedVersion: 2
-        x: 7
-        y: 2
-        width: 952
-        height: 950
+        x: 0
+        y: 0
+        width: 932
+        height: 932
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bcd2e98084573cb30800000000000000
-      internalID: 4306414620939005387
+      spriteID: a9de8b75878952680800000000000000
+      internalID: -8780444255853679206
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Mask group (1)_0: 4306414620939005387
+      UI_Play Button_0: -8780444255853679206
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
