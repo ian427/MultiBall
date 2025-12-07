@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 2a13d592850b16b41bc4c97be0976ae3
+guid: dd1e1f736a1a84712b1a05ad4870aed0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3986645552552914047
-    second: 41854-7-icicles-image-free-download-png-hq_0
+      213: -5469937006445687581
+    second: jungle spinner_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -97,19 +97,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
     buildTarget: iOS
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -126,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 41854-7-icicles-image-free-download-png-hq_0
+      name: jungle spinner_0
       rect:
         serializedVersion: 2
-        x: 65
-        y: 71
-        width: 3924
-        height: 5891
+        x: 340
+        y: 130
+        width: 849
+        height: 795
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 18351bafdf69ca8c0800000000000000
-      internalID: -3986645552552914047
+      spriteID: 3ec8a0b0641e614b0800000000000000
+      internalID: -5469937006445687581
       vertices: []
       indices: 
       edges: []
@@ -161,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      41854-7-icicles-image-free-download-png-hq_0: -3986645552552914047
+      jungle spinner_0: -5469937006445687581
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
