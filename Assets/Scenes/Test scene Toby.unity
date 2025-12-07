@@ -595,6 +595,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &2005572592042460840
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2040477915702028542, guid: 95c9afb57b6337d4f8386c538ff9d84d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2040477915702028542, guid: 95c9afb57b6337d4f8386c538ff9d84d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2040477915702028542, guid: 95c9afb57b6337d4f8386c538ff9d84d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2040477915702028542, guid: 95c9afb57b6337d4f8386c538ff9d84d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2040477915702028542, guid: 95c9afb57b6337d4f8386c538ff9d84d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2040477915702028542, guid: 95c9afb57b6337d4f8386c538ff9d84d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2040477915702028542, guid: 95c9afb57b6337d4f8386c538ff9d84d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2040477915702028542, guid: 95c9afb57b6337d4f8386c538ff9d84d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2040477915702028542, guid: 95c9afb57b6337d4f8386c538ff9d84d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2040477915702028542, guid: 95c9afb57b6337d4f8386c538ff9d84d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6383232951462340513, guid: 95c9afb57b6337d4f8386c538ff9d84d, type: 3}
+      propertyPath: m_Name
+      value: Puff effect
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 95c9afb57b6337d4f8386c538ff9d84d, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -603,3 +660,4 @@ SceneRoots:
   - {fileID: 728926780}
   - {fileID: 276462835}
   - {fileID: 1282420541}
+  - {fileID: 2005572592042460840}
