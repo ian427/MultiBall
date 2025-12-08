@@ -605,7 +605,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1150030821844112000, guid: 95c9afb57b6337d4f8386c538ff9d84d, type: 3}
       propertyPath: looping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1150030821844112000, guid: 95c9afb57b6337d4f8386c538ff9d84d, type: 3}
+      propertyPath: NoiseModule.enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1150030821844112000, guid: 95c9afb57b6337d4f8386c538ff9d84d, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1150030821844112000, guid: 95c9afb57b6337d4f8386c538ff9d84d, type: 3}
+      propertyPath: InitialModule.startLifetime.minScalar
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 1150030821844112000, guid: 95c9afb57b6337d4f8386c538ff9d84d, type: 3}
+      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 2040477915702028542, guid: 95c9afb57b6337d4f8386c538ff9d84d, type: 3}
       propertyPath: m_LocalPosition.x
