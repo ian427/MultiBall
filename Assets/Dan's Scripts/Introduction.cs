@@ -14,17 +14,12 @@ public class Introduction : MonoBehaviour
     [SerializeField] private bool firstIntroActive;
     [SerializeField] private bool lastIntroActive;
 
+    [SerializeField] private StartingCountdown sc;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        startTimeA = 2f;
-        startTimeB = 2f;
-
-        firstIntroActive = true;
-        lastIntroActive = false;
-
-        introTextA.SetActive(true);
-        introTextB.SetActive(false);
+        StartCoroutine(beginIntroSequence());
     }
 
     // Update is called once per frame
@@ -32,7 +27,7 @@ public class Introduction : MonoBehaviour
     {
         if(firstIntroActive == true)
         {
-            startTimeA -= 1 * Time.deltaTime;
+            startTimeA -= Time.unscaledDeltaTime;
             if(startTimeA <= 0)
             {
                 firstIntroActive = false;
@@ -43,24 +38,42 @@ public class Introduction : MonoBehaviour
 
         if(lastIntroActive == true)
         {
-            startTimeB -= 1 * Time.deltaTime;
+            startTimeB -= Time.unscaledDeltaTime;
             if(startTimeB <= 0)
             {
                 lastIntroActive = false;
                 introTextB.SetActive(false);
+                StartCoroutine(ActivateCountdown());
             }
         }
     }
 
+    private IEnumerator beginIntroSequence()
+    {
+        Time.timeScale = 0;
+
+        yield return null;
+
+        startTimeA = 2f;
+        startTimeB = 2f;
+
+        firstIntroActive = true;
+        lastIntroActive = false;
+
+        introTextA.SetActive(true);
+        introTextB.SetActive(false);
+    }
+
     private IEnumerator ActivateNextText()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSecondsRealtime(1);
         lastIntroActive = true;
         introTextB.SetActive(true);
     }
 
     private IEnumerator ActivateCountdown()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSecondsRealtime(1);
+        sc.StartCountdown();
     }
 }
