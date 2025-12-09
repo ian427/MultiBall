@@ -8,6 +8,10 @@ public class MainMenu : MonoBehaviour
         LoadingScreenManager.Instance.SwitchToScene(1);
     }
 
+    public void PlayGame()
+    {
+        SceneManager.LoadSceneAsync(2);
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
