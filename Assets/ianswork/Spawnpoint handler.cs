@@ -64,7 +64,10 @@ public class Spawnpointhandler : MonoBehaviour
                 // Code if none of the cases match
                 break;
         }
-
+        for (int i = 0; i < obspawn.Count; i++)
+        {
+            obspawn[i].SetSprites();
+        }
     }
     IEnumerator Spawn()
     {

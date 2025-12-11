@@ -23,6 +23,15 @@ public class Obsticalspawner : MonoBehaviour
 
         }
     }
+    public void SetSprites ()
+    {
+        for (int i = 0; i < obj.Count; i++)
+        {
+            obj[i].GetComponent<ObsticalHandler>().UpdateSprite();
+
+        }
+       
+    }
     public void SpawnObstacle ()
     {
         for(int i = 0; i < obj.Count;i++)
