@@ -8,7 +8,8 @@ public class BackgroundTransition : MonoBehaviour
     public GameObject arcticBG;
     public GameObject jungleBG;
     public GameObject volcanoBG;
-
+    [SerializeField] private GameObject Corner;
+    [SerializeField] private GameObject Corner1;
     [SerializeField] private Animator anim;
     [SerializeField] private int number;
     private string name;
@@ -45,14 +46,15 @@ public class BackgroundTransition : MonoBehaviour
         Spawn.UpdateBackground(number);
         if(number == 1)
         {
-            if(name != "Desert")
+            if(name != "Desert")//check what previous background was
             {
                 defaultBG.SetActive(false);
                 desertBG.SetActive(true);
                 arcticBG.SetActive(false);
                 jungleBG.SetActive(false);
                 volcanoBG.SetActive(false);
-
+                Corner1.GetComponent<ChangeCorner>().SetColorDesert();
+                Corner.GetComponent<ChangeCorner>().SetColorDesert();
                 name = "Desert";
             }
 
@@ -72,7 +74,8 @@ public class BackgroundTransition : MonoBehaviour
                 arcticBG.SetActive(true);
                 jungleBG.SetActive(false);
                 volcanoBG.SetActive(false);
-
+                Corner1.GetComponent<ChangeCorner>().SetColorArctic();
+                Corner.GetComponent<ChangeCorner>().SetColorArctic();
                 name = "Arctic";
             }
 
@@ -92,7 +95,8 @@ public class BackgroundTransition : MonoBehaviour
                 arcticBG.SetActive(false);
                 jungleBG.SetActive(true);
                 volcanoBG.SetActive(false);
-
+                Corner1.GetComponent<ChangeCorner>().SetColorJungle();
+                Corner.GetComponent<ChangeCorner>().SetColorJungle();
                 name = "Jungle";
             }
 
@@ -111,7 +115,8 @@ public class BackgroundTransition : MonoBehaviour
                 arcticBG.SetActive(false);
                 jungleBG.SetActive(false);
                 volcanoBG.SetActive(true);
-
+                Corner1.GetComponent<ChangeCorner>().SetColorVolcano();
+                Corner.GetComponent<ChangeCorner>().SetColorVolcano();
                 name = "Volcano";
             }
 
