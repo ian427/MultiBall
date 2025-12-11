@@ -1,125 +1,71 @@
 using System.Collections;
-
 using UnityEngine;
 
-using UnityEngine.UI;
-
-public class BackgroundChanger : MonoBehaviour
-
+public class SpriteCrossFade : MonoBehaviour
 {
+    public SpriteRenderer mainRenderer;  // Your primary renderer
+    public Sprite[] sprites;             // All sprites to cycle through
 
-    public Image backgroundImage; // Reference to the Image component displaying the background
+    public float timeBetweenChanges = 5f;
+    public float fadeDuration = 1f;
 
-    public Sprite[] backgroundSprites; // Array of sprites to cycle through
-
-    public float timeBetweenChanges = 5f; // Time to wait before changing to the next background
-
-    public float fadeDuration = 1f; // Time it takes to fade in/out
-
-    private int currentBackgroundIndex = 0; // Track current background sprite index
+    private SpriteRenderer fadeRenderer;
+    private int currentIndex = 0;
 
     private void Start()
-
     {
+        if (sprites.Length == 0)
+            return;
 
-        // Start the background change coroutine
+        // Create a fade renderer as a child
+        GameObject fadeObj = new GameObject("FadeRenderer");
+        fadeObj.transform.SetParent(transform);
+        fadeObj.transform.localPosition = Vector3.zero;
 
-        if (backgroundSprites.Length > 0)
+        fadeRenderer = fadeObj.AddComponent<SpriteRenderer>();
+        fadeRenderer.sortingLayerID = mainRenderer.sortingLayerID;
+        fadeRenderer.sortingOrder = mainRenderer.sortingOrder + 1; // Render above main
+        fadeRenderer.color = new Color(1, 1, 1, 0); // Start invisible
 
-        {
+        // Set initial sprite
+        mainRenderer.sprite = sprites[currentIndex];
 
-            StartCoroutine(ChangeBackground());
-
-        }
-
+        StartCoroutine(CycleSprites());
     }
 
-    private IEnumerator ChangeBackground()
-
+    private IEnumerator CycleSprites()
     {
-
         while (true)
-
         {
+            int nextIndex = (currentIndex + 1) % sprites.Length;
+            Sprite nextSprite = sprites[nextIndex];
 
-            // Fade to transparent first
+            fadeRenderer.sprite = nextSprite;
+            fadeRenderer.color = new Color(1f, 1f, 1f, 0f);
 
-            yield return StartCoroutine(FadeOut());
+            float t = 0f;
 
-            // Change to the next background
+            // Cross fade
+            while (t < fadeDuration)
+            {
+                t += Time.deltaTime;
+                float a = t / fadeDuration;
 
-            currentBackgroundIndex = (currentBackgroundIndex + 1) % backgroundSprites.Length;
+                fadeRenderer.color = new Color(1, 1, 1, a);     // Fade in
+                mainRenderer.color = new Color(1, 1, 1, 1 - a); // Fade out
 
-            backgroundImage.sprite = backgroundSprites[currentBackgroundIndex];
+                yield return null;
+            }
 
-            // Fade in with the new background
+            // Swap
+            mainRenderer.sprite = nextSprite;
+            mainRenderer.color = Color.white;
 
-            yield return StartCoroutine(FadeIn());
+            fadeRenderer.color = new Color(1, 1, 1, 0);
 
-            // Wait before changing again
+            currentIndex = nextIndex;
 
             yield return new WaitForSeconds(timeBetweenChanges);
-
         }
-
     }
-
-    private IEnumerator FadeOut()
-
-    {
-
-        float timeElapsed = 0f;
-
-        Color currentColor = backgroundImage.color;
-
-        while (timeElapsed < fadeDuration)
-
-        {
-
-            timeElapsed += Time.deltaTime;
-
-            float alpha = Mathf.Lerp(1f, 0f, timeElapsed / fadeDuration);
-
-            backgroundImage.color = new Color(currentColor.r, currentColor.g, currentColor.b, alpha);
-
-            yield return null;
-
-        }
-
-        // Ensure the image is fully transparent at the end
-
-        backgroundImage.color = new Color(currentColor.r, currentColor.g, currentColor.b, 0f);
-
-    }
-
-    private IEnumerator FadeIn()
-
-    {
-
-        float timeElapsed = 0f;
-
-        Color currentColor = backgroundImage.color;
-
-        while (timeElapsed < fadeDuration)
-
-        {
-
-            timeElapsed += Time.deltaTime;
-
-            float alpha = Mathf.Lerp(0f, 1f, timeElapsed / fadeDuration);
-
-            backgroundImage.color = new Color(currentColor.r, currentColor.g, currentColor.b, alpha);
-
-            yield return null;
-
-        }
-
-        // Ensure the image is fully opaque at the end
-
-        backgroundImage.color = new Color(currentColor.r, currentColor.g, currentColor.b, 1f);
-
-    }
-
 }
-
-
