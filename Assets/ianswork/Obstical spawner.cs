@@ -15,9 +15,17 @@ public class Obsticalspawner : MonoBehaviour
     {
         
     }
+    public void SetDeactive()
+    {
+        for (int i = 0; i < obj.Count; i++)
+        {
+            obj[i].SetActive(false);
+
+        }
+    }
     public void SpawnObstacle ()
     {
-        for(int i = 0; i > obj.Count;i++)
+        for(int i = 0; i < obj.Count;i++)
         {
             obj[i].SetActive(false);
             

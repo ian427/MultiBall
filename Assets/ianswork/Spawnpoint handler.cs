@@ -69,7 +69,13 @@ public class Spawnpointhandler : MonoBehaviour
     IEnumerator Spawn()
     {
         Debug.Log("Spawned");
-        List<Obsticalspawner> points = new List<Obsticalspawner>(obspawn);
+
+        List<Obsticalspawner> points = new List<Obsticalspawner>(obspawn); 
+        for (int i = 0; i < points.Count; i++)
+        {
+            points[i].SetDeactive();
+
+        }
         for (int i = 0; i < spawnAmount; i++)
         {
             int temp = Random.Range(0, points.Count);
