@@ -1436,7 +1436,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::StartingCountdown
   startTime: 0
   presentTime: 0
-  timeTextObject: {fileID: 165879070}
+  startingCanvas: {fileID: 165879070}
+  timeTextObject: {fileID: 760928365}
   timeText: {fileID: 760928366}
   started: 0
 --- !u!114 &769905186
@@ -1459,6 +1460,7 @@ MonoBehaviour:
   introTextB: {fileID: 151032194}
   firstIntroActive: 0
   lastIntroActive: 0
+  sc: {fileID: 769905185}
 --- !u!1 &827099275 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5450089267423882805, guid: 87441a85ca86213469cfbb6833e7f544, type: 3}
