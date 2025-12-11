@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class SpriteCrossFade : MonoBehaviour
 {
-    public SpriteRenderer mainRenderer;  // Your primary renderer
-    public Sprite[] sprites;             // All sprites to cycle through
+    public SpriteRenderer mainRenderer;  
+    public Sprite[] sprites;             
 
     public float timeBetweenChanges = 5f;
     public float fadeDuration = 1f;
@@ -12,55 +12,57 @@ public class SpriteCrossFade : MonoBehaviour
     private SpriteRenderer fadeRenderer;
     private int currentIndex = 0;
 
-    private void Start()
+    void Start()
     {
-        if (sprites.Length == 0)
+        if (sprites == null || sprites.Length == 0)
             return;
 
-        // Create a fade renderer as a child
-        GameObject fadeObj = new GameObject("FadeRenderer");
-        fadeObj.transform.SetParent(transform);
-        fadeObj.transform.localPosition = Vector3.zero;
+        // Create fade renderer
+        fadeRenderer = new GameObject("FadeRenderer").AddComponent<SpriteRenderer>();
 
-        fadeRenderer = fadeObj.AddComponent<SpriteRenderer>();
+        fadeRenderer.transform.SetParent(mainRenderer.transform, false);
+        fadeRenderer.transform.localPosition = Vector3.zero;
+
+        // IMPORTANT FIX: use separate material so alpha changes work reliably
+        fadeRenderer.material = new Material(mainRenderer.material);
+
         fadeRenderer.sortingLayerID = mainRenderer.sortingLayerID;
-        fadeRenderer.sortingOrder = mainRenderer.sortingOrder + 1; // Render above main
-        fadeRenderer.color = new Color(1, 1, 1, 0); // Start invisible
+        fadeRenderer.sortingOrder = mainRenderer.sortingOrder + 1;
+        fadeRenderer.color = new Color(1, 1, 1, 0);
 
-        // Set initial sprite
         mainRenderer.sprite = sprites[currentIndex];
 
         StartCoroutine(CycleSprites());
     }
 
-    private IEnumerator CycleSprites()
+    IEnumerator CycleSprites()
     {
         while (true)
         {
             int nextIndex = (currentIndex + 1) % sprites.Length;
             Sprite nextSprite = sprites[nextIndex];
 
+            // Set next sprite on fadeRenderer
             fadeRenderer.sprite = nextSprite;
-            fadeRenderer.color = new Color(1f, 1f, 1f, 0f);
+            fadeRenderer.color = new Color(1, 1, 1, 0);
 
             float t = 0f;
 
-            // Cross fade
+            // Crossfade
             while (t < fadeDuration)
             {
                 t += Time.deltaTime;
-                float a = t / fadeDuration;
+                float a = Mathf.Clamp01(t / fadeDuration);
 
-                fadeRenderer.color = new Color(1, 1, 1, a);     // Fade in
-                mainRenderer.color = new Color(1, 1, 1, 1 - a); // Fade out
+                fadeRenderer.color = new Color(1, 1, 1, a);      // Fade in next
+                mainRenderer.color = new Color(1, 1, 1, 1 - a);  // Fade out current
 
                 yield return null;
             }
 
-            // Swap
+            // Swap complete
             mainRenderer.sprite = nextSprite;
             mainRenderer.color = Color.white;
-
             fadeRenderer.color = new Color(1, 1, 1, 0);
 
             currentIndex = nextIndex;
