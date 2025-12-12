@@ -13,7 +13,7 @@ public class LoadingManager : MonoBehaviour
 
     [Header("Behavior")]
     [SerializeField] float loadSpeed = 0.6f; //how fast the fake bar fills
-    [SerializeField] string menuSceneName = "MainMenu";
+    [SerializeField] string menuSceneName = "Main Menu";
 
     bool isLoadingDone = false;
 
