@@ -15,7 +15,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] public Canvas Pannel;
     //private Image image;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField]
+    private Spawnpointhandler spawners;
+   void Start()
     {
         score = GetComponent<Score>();
         Data = GameObject.Find("DataHolder").GetComponent<DataSerilizer>();
@@ -27,6 +29,7 @@ public class GameManager : MonoBehaviour
     {
         Pannel.enabled = true;
         score.Stopclock = true;
+        spawners.CanSpawn = false;
         int Highscore = Data.GetHighTime();
         int newscore = score.GetScore();
         if(newscore > Highscore)

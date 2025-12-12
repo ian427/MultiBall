@@ -11,13 +11,14 @@ public class ObsticalHandler : MonoBehaviour
     public Sprite Arcticsprite;
     public Sprite Junglesprite;
     public Sprite Volcanosprite;
-    private SpriteRenderer sr;
+    public SpriteRenderer sr;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        handler = GameObject.Find("Manager").GetComponent<Spawnpointhandler>();
+        //this.gameObject.SetActive(true);
+       handler = GameObject.Find("Manager").GetComponent<Spawnpointhandler>();
 
          sr = GetComponent<SpriteRenderer>();
         Sprite current = sr.sprite;

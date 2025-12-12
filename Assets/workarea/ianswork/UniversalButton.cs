@@ -11,11 +11,11 @@ public class UniversalButton : MonoBehaviour
     public void OnButtonPress()
     {
         SceneManager.LoadScene(SceneToGoTO);//remove for sound
-        click.Play();
+        //click.Play();
 
-        canSwitch = true;
+        //canSwitch = true;
 
-        Debug.Log("click");
+       // Debug.Log("click");
     }
     /*
     private void Update()

@@ -10,6 +10,7 @@ public class Spawnpointhandler : MonoBehaviour
     [SerializeField] private List<Obsticalspawner> obspawn = new List<Obsticalspawner>();
     public float respawnDelay = 5f;
     [SerializeField] private int spawnAmount = 3;
+    public bool CanSpawn = true;
     public enum CurrentBackground
     {
         Default = 0,
@@ -38,7 +39,13 @@ public class Spawnpointhandler : MonoBehaviour
         return (int)ChosenBackground;
     }
     private void Restart()
-    { StartCoroutine(Spawn()); }
+    {
+        if (CanSpawn)
+        {
+            StartCoroutine(Spawn()); 
+        }
+        
+    }
     // Update is called once per frame
     public void UpdateBackground(int Background)
     {
@@ -71,7 +78,7 @@ public class Spawnpointhandler : MonoBehaviour
     }
     IEnumerator Spawn()
     {
-        Debug.Log("Spawned");
+        Debug.Log("SpawnedObstical");
 
         List<Obsticalspawner> points = new List<Obsticalspawner>(obspawn); 
         for (int i = 0; i < points.Count; i++)
