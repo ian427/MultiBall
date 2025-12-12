@@ -12,7 +12,7 @@ public class TrailRendererColour : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        colorCheckOBJ = GameObject.Find("EventSystem");
+        colorCheckOBJ = GameObject.Find("Manager");
         bcc = colorCheckOBJ.GetComponent<BallColorChecker>();
 
         tr = GetComponent<TrailRenderer>();
@@ -20,11 +20,7 @@ public class TrailRendererColour : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    
     private void SetStartColour()
     {
         for (int i = 0; i < 4; i++)
