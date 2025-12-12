@@ -3,7 +3,7 @@ using UnityEngine;
 public class DataSerilizer : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-   private int CurrentTime,HighTime = 0;
+    public int HighTime = 0;
     public int Brightness = 255;
     public float Volume = 1;
     void Awake()

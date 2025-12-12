@@ -34,9 +34,10 @@ public class GameManager : MonoBehaviour
         int newscore = score.GetScore();
         if(newscore > Highscore)
         {
-            Data.SetHighTime(Highscore);
+            Data.HighTime = newscore;
+            Data.SaveHighestime();
             //show new score
-            Highscore = newscore;
+           
             int Minutes = 0,seconds = 0;
             while (newscore > 60)
             {
@@ -59,7 +60,7 @@ public class GameManager : MonoBehaviour
                 SMinutes++;
 
             }
-            HSeconds = newscore;
+            SSeconds = newscore;
             while (Highscore > 60)
             {
                 Highscore -= 60;
