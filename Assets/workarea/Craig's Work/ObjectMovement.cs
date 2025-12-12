@@ -24,7 +24,7 @@ public class ObjectMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(_direction * (speed * Time.deltaTime));// movement
+        //transform.Translate(_direction * (speed * Time.deltaTime));// movement
 
         if (transform.position.x < minX)// points to not go out of the level
         {
