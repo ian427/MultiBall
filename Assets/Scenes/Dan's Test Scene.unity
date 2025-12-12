@@ -2467,8 +2467,11 @@ MonoBehaviour:
   arcticBG: {fileID: 931004540}
   jungleBG: {fileID: 827099275}
   volcanoBG: {fileID: 1756663904}
+  Corner: {fileID: 0}
+  Corner1: {fileID: 0}
   anim: {fileID: 1154195768}
   number: 0
+  Spawn: {fileID: 0}
 --- !u!1 &1376399794 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6129481462555802189, guid: 6b23aab13811c184d8d2a5af7646b396, type: 3}
