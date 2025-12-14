@@ -16,34 +16,51 @@ public class Introduction : MonoBehaviour
 
     [SerializeField] private StartingCountdown sc;
 
+    [SerializeField] private bool skipped;
+
+    private Coroutine nextText;
+    private Coroutine countdown;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        skipped = false;
         StartCoroutine(beginIntroSequence());
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(firstIntroActive == true)
+        if(skipped == true)
         {
-            startTimeA -= Time.unscaledDeltaTime;
-            if(startTimeA <= 0)
+            return;
+        }
+
+        if(firstIntroActive == true && skipped == false)
+        {
+            if (skipped == false)
             {
-                firstIntroActive = false;
-                introTextA.SetActive(false);
-                StartCoroutine(ActivateNextText());
+                startTimeA -= Time.unscaledDeltaTime;
+                if (startTimeA <= 0)
+                {
+                    firstIntroActive = false;
+                    introTextA.SetActive(false);
+                    nextText = StartCoroutine(ActivateNextText());
+                }
             }
         }
 
         if(lastIntroActive == true)
         {
-            startTimeB -= Time.unscaledDeltaTime;
-            if(startTimeB <= 0)
+            if(skipped == false)
             {
-                lastIntroActive = false;
-                introTextB.SetActive(false);
-                StartCoroutine(ActivateCountdown());
+                startTimeB -= Time.unscaledDeltaTime;
+                if (startTimeB <= 0)
+                {
+                    lastIntroActive = false;
+                    introTextB.SetActive(false);
+                    countdown = StartCoroutine(ActivateCountdown());
+                }
             }
         }
     }
@@ -64,9 +81,32 @@ public class Introduction : MonoBehaviour
         introTextB.SetActive(false);
     }
 
+    public void SkipIntros()
+    {
+        skipped = true;
+
+        if (nextText != null)
+        {
+            StopCoroutine(nextText);
+        }
+
+        if (countdown != null)
+        {
+            StopCoroutine(countdown);
+        }
+
+        firstIntroActive = true;
+        lastIntroActive = false;
+        introTextA.SetActive(false);
+        introTextB.SetActive(false);
+
+        sc.StartCountdown();
+    }
+
     private IEnumerator ActivateNextText()
     {
         yield return new WaitForSecondsRealtime(1);
+        if (skipped == true) yield break;
         lastIntroActive = true;
         introTextB.SetActive(true);
     }
@@ -74,6 +114,7 @@ public class Introduction : MonoBehaviour
     private IEnumerator ActivateCountdown()
     {
         yield return new WaitForSecondsRealtime(1);
+        if (skipped == true) yield break;
         sc.StartCountdown();
     }
 }
