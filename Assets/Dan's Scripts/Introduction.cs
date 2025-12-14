@@ -14,6 +14,8 @@ public class Introduction : MonoBehaviour
     [SerializeField] private bool firstIntroActive;
     [SerializeField] private bool lastIntroActive;
 
+    [SerializeField] private GameObject canvas;
+    [SerializeField] private GameObject tapToPlay;
     [SerializeField] private StartingCountdown sc;
 
     [SerializeField] private bool skipped;
@@ -25,12 +27,19 @@ public class Introduction : MonoBehaviour
     void Start()
     {
         skipped = false;
-        StartCoroutine(beginIntroSequence());
+        tapToPlay.SetActive(true);
+        canvas.SetActive(false);
+        Time.timeScale = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            OnGameStart();
+        }
+
         if(skipped == true)
         {
             return;
@@ -65,10 +74,16 @@ public class Introduction : MonoBehaviour
         }
     }
 
+    public void OnGameStart()
+    {
+        canvas.SetActive(true);
+        tapToPlay.SetActive(false);
+        StartCoroutine(beginIntroSequence());
+    }
+
     private IEnumerator beginIntroSequence()
     {
         Time.timeScale = 0;
-
         yield return null;
 
         startTimeA = 2f;
@@ -102,7 +117,6 @@ public class Introduction : MonoBehaviour
 
         sc.StartCountdown();
     }
-
     private IEnumerator ActivateNextText()
     {
         yield return new WaitForSecondsRealtime(1);
