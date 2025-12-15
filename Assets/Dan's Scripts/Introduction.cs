@@ -23,6 +23,9 @@ public class Introduction : MonoBehaviour
     private Coroutine nextText;
     private Coroutine countdown;
 
+    [SerializeField] private AudioSource voiceLine1;
+    [SerializeField] private AudioSource voiceLine2;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -94,6 +97,8 @@ public class Introduction : MonoBehaviour
 
         introTextA.SetActive(true);
         introTextB.SetActive(false);
+
+        voiceLine1.Play();
     }
 
     public void SkipIntros()
@@ -123,6 +128,7 @@ public class Introduction : MonoBehaviour
         if (skipped == true) yield break;
         lastIntroActive = true;
         introTextB.SetActive(true);
+        voiceLine2.Play();
     }
 
     private IEnumerator ActivateCountdown()
