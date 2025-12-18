@@ -6,7 +6,7 @@ public class Score : MonoBehaviour
     [SerializeField] private TextMeshProUGUI Timer;
     private int Minutes;
     private int Seconds;
-    private int Total;
+    [SerializeField] private int Total;
     public bool Stopclock = false;
     public BackgroundTransition manager;
     private void Start()
