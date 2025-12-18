@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class StartingCountdown : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class StartingCountdown : MonoBehaviour
     [SerializeField] private GameObject startingCanvas;
     [SerializeField] private GameObject timeTextObject;
     [SerializeField] private TMP_Text timeText;
-
+    public Button Skip;
     [HideInInspector] public bool started;
     [SerializeField] private AudioSource secondClick;
     [SerializeField] private AudioSource buzzer;
@@ -51,6 +52,7 @@ public class StartingCountdown : MonoBehaviour
 
     public void StartCountdown()
     {
+        Skip.gameObject.SetActive(false);
         started = false;
         startingCanvas.SetActive(true);
         timeTextObject.SetActive(true);
