@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
         int Minutes = 0, seconds = 0;
         while (Temp > 60)
         {
-            Minutes -= 60;
+            Temp -= 60;
             Minutes++;
 
         }

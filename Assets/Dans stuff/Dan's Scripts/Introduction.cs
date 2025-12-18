@@ -136,6 +136,7 @@ public class Introduction : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(1);
         if (skipped == true) yield break;
+        
         sc.StartCountdown();
     }
 }
