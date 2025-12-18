@@ -14,44 +14,80 @@ public class Introduction : MonoBehaviour
     [SerializeField] private bool firstIntroActive;
     [SerializeField] private bool lastIntroActive;
 
+    [SerializeField] private GameObject canvas;
+    //[SerializeField] private GameObject tapToPlay;
     [SerializeField] private StartingCountdown sc;
+
+    [SerializeField] private bool skipped;
+
+    private Coroutine nextText;
+    private Coroutine countdown;
+
+    [SerializeField] private AudioSource voiceLine1;
+    [SerializeField] private AudioSource voiceLine2;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        StartCoroutine(beginIntroSequence());
+        skipped = false;
+        //tapToPlay.SetActive(true);
+        canvas.SetActive(false);
+        Time.timeScale = 0;
+        OnGameStart();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(firstIntroActive == true)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            startTimeA -= Time.unscaledDeltaTime;
-            if(startTimeA <= 0)
+            //OnGameStart();
+        }
+
+        if(skipped == true)
+        {
+            return;
+        }
+
+        if(firstIntroActive == true && skipped == false)
+        {
+            if (skipped == false)
             {
-                firstIntroActive = false;
-                introTextA.SetActive(false);
-                StartCoroutine(ActivateNextText());
+                startTimeA -= Time.unscaledDeltaTime;
+                if (startTimeA <= 0)
+                {
+                    firstIntroActive = false;
+                    introTextA.SetActive(false);
+                    nextText = StartCoroutine(ActivateNextText());
+                }
             }
         }
 
         if(lastIntroActive == true)
         {
-            startTimeB -= Time.unscaledDeltaTime;
-            if(startTimeB <= 0)
+            if(skipped == false)
             {
-                lastIntroActive = false;
-                introTextB.SetActive(false);
-                StartCoroutine(ActivateCountdown());
+                startTimeB -= Time.unscaledDeltaTime;
+                if (startTimeB <= 0)
+                {
+                    lastIntroActive = false;
+                    introTextB.SetActive(false);
+                    countdown = StartCoroutine(ActivateCountdown());
+                }
             }
         }
+    }
+
+    public void OnGameStart()
+    {
+        canvas.SetActive(true);
+        //tapToPlay.SetActive(false);
+        StartCoroutine(beginIntroSequence());
     }
 
     private IEnumerator beginIntroSequence()
     {
         Time.timeScale = 0;
-
         yield return null;
 
         startTimeA = 2f;
@@ -62,18 +98,44 @@ public class Introduction : MonoBehaviour
 
         introTextA.SetActive(true);
         introTextB.SetActive(false);
+
+        voiceLine1.Play();
     }
 
+    public void SkipIntros()
+    {
+        skipped = true;
+
+        if (nextText != null)
+        {
+            StopCoroutine(nextText);
+        }
+
+        if (countdown != null)
+        {
+            StopCoroutine(countdown);
+        }
+
+        firstIntroActive = true;
+        lastIntroActive = false;
+        introTextA.SetActive(false);
+        introTextB.SetActive(false);
+
+        sc.StartCountdown();
+    }
     private IEnumerator ActivateNextText()
     {
         yield return new WaitForSecondsRealtime(1);
+        if (skipped == true) yield break;
         lastIntroActive = true;
         introTextB.SetActive(true);
+        voiceLine2.Play();
     }
 
     private IEnumerator ActivateCountdown()
     {
         yield return new WaitForSecondsRealtime(1);
+        if (skipped == true) yield break;
         sc.StartCountdown();
     }
 }
