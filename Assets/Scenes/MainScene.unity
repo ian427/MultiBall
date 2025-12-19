@@ -8100,6 +8100,7 @@ GameObject:
   - component: {fileID: 491419620}
   - component: {fileID: 491419619}
   - component: {fileID: 491419618}
+  - component: {fileID: 491419621}
   m_Layer: 0
   m_Name: Heart
   m_TagString: Untagged
@@ -13076,6 +13077,19 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &491419621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 491419614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81cce2c47d6f22640be8960556cab4ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TestHeartControler
+  animator: {fileID: 491419617}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -14911,6 +14925,7 @@ GameObject:
   - component: {fileID: 1215692794}
   - component: {fileID: 1215692793}
   - component: {fileID: 1215692792}
+  - component: {fileID: 1215692795}
   m_Layer: 0
   m_Name: Heart (2)
   m_TagString: Untagged
@@ -19887,6 +19902,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ParticleControler
   m_ParticleSystem: {fileID: 1215692793}
+--- !u!114 &1215692795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1215692788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81cce2c47d6f22640be8960556cab4ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TestHeartControler
+  animator: {fileID: 1215692791}
 --- !u!1001 &1290697341
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19970,6 +19998,7 @@ GameObject:
   - component: {fileID: 1294476094}
   - component: {fileID: 1294476093}
   - component: {fileID: 1294476092}
+  - component: {fileID: 1294476095}
   m_Layer: 0
   m_Name: Heart (1)
   m_TagString: Untagged
@@ -24946,6 +24975,19 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &1294476095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1294476088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81cce2c47d6f22640be8960556cab4ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TestHeartControler
+  animator: {fileID: 1294476091}
 --- !u!212 &1326878426 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 7601844195993444639, guid: 21b8886a355ad86479bfc9569c0e5277, type: 3}

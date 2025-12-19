@@ -22,9 +22,10 @@ public class HealthDown : MonoBehaviour
         obj.gameObject.SetActive(false);
         Pcon.PlayEffect();
         // HealthObjects.Remove(HealthObjects[LivesLeft])
-        HealthObjects[(LivesLeft - 1)].gameObject.GetComponent<ParticleControler>().PlayEffect();
-        HealthObjects[(LivesLeft - 1)].gameObject.GetComponent<SpriteRenderer>().enabled = false;
+
+        StartCoroutine(PlayAnimationCoroutine(LivesLeft-1));
         //Destroy(HealthObjects[(LivesLeft-1)].gameObject);
+        //LivesLeft--;
         LivesLeft--;
         //Debug.Log("triggered");
 
@@ -40,4 +41,19 @@ public class HealthDown : MonoBehaviour
           }
         
         }
+    System.Collections.IEnumerator PlayAnimationCoroutine(int index)
+    {
+      
+       
+        HealthObjects[(index)].gameObject.GetComponent<TestHeartControler>().PlayAnimation();
+        //Animator m_Animator = HealthObjects[(index)].gameObject.GetComponent<Animator>();
+        //yield return new WaitUntil(() => m_Animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f);
+        yield return new WaitForSeconds(1.9f);
+        HealthObjects[(index)].gameObject.GetComponent<ParticleControler>().PlayEffect();
+        HealthObjects[(index)].gameObject.GetComponent<SpriteRenderer>().enabled = false;
+     
+
+
+
+    }
 }
