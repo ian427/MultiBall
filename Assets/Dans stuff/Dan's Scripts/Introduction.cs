@@ -15,7 +15,7 @@ public class Introduction : MonoBehaviour
     [SerializeField] private bool lastIntroActive;
 
     [SerializeField] private GameObject canvas;
-    [SerializeField] private GameObject tapToPlay;
+    //[SerializeField] private GameObject tapToPlay;
     [SerializeField] private StartingCountdown sc;
 
     [SerializeField] private bool skipped;
@@ -23,13 +23,17 @@ public class Introduction : MonoBehaviour
     private Coroutine nextText;
     private Coroutine countdown;
 
+    [SerializeField] private AudioSource voiceLine1;
+    [SerializeField] private AudioSource voiceLine2;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         skipped = false;
-        tapToPlay.SetActive(true);
+        //tapToPlay.SetActive(true);
         canvas.SetActive(false);
         Time.timeScale = 0;
+        OnGameStart();
     }
 
     // Update is called once per frame
@@ -37,7 +41,7 @@ public class Introduction : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            OnGameStart();
+            //OnGameStart();
         }
 
         if(skipped == true)
@@ -77,7 +81,7 @@ public class Introduction : MonoBehaviour
     public void OnGameStart()
     {
         canvas.SetActive(true);
-        tapToPlay.SetActive(false);
+        //tapToPlay.SetActive(false);
         StartCoroutine(beginIntroSequence());
     }
 
@@ -94,6 +98,8 @@ public class Introduction : MonoBehaviour
 
         introTextA.SetActive(true);
         introTextB.SetActive(false);
+
+        voiceLine1.Play();
     }
 
     public void SkipIntros()
@@ -123,6 +129,7 @@ public class Introduction : MonoBehaviour
         if (skipped == true) yield break;
         lastIntroActive = true;
         introTextB.SetActive(true);
+        voiceLine2.Play();
     }
 
     private IEnumerator ActivateCountdown()
