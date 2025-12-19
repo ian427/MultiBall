@@ -22,7 +22,9 @@ public class HealthDown : MonoBehaviour
         obj.gameObject.SetActive(false);
         Pcon.PlayEffect();
         // HealthObjects.Remove(HealthObjects[LivesLeft])
-        Destroy(HealthObjects[(LivesLeft-1)].gameObject);
+        HealthObjects[(LivesLeft - 1)].gameObject.GetComponent<Animator>().SetBool("HeartIsLoss", true);
+        //Destroy(HealthObjects[(LivesLeft-1)].gameObject);
+
         LivesLeft--;
         //Debug.Log("triggered");
 
