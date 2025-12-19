@@ -5,7 +5,8 @@ public class Spawnballs : MonoBehaviour
 {
     [SerializeField] private GameObject Ball;
     [SerializeField] private float spawnCountdown = 0;
-    [SerializeField] private int MaxSpawn, CurrentSpawned = 0;
+    [SerializeField] private int MaxSpawn = 3;
+    public int CurrentSpawned = 0;
     [SerializeField] private int EnableSpot = 0;
     [SerializeField] private float speedup = 0.01f;
     [SerializeField] private List<GameObject> Balls = new List<GameObject>();
@@ -23,13 +24,28 @@ public class Spawnballs : MonoBehaviour
         }
 
     }
-    private void SpawnBall ()
+    public void SpawnBall()
     {
-        if(CurrentSpawned < MaxSpawn)
+        if (CurrentSpawned < MaxSpawn)
         {
             StartCoroutine(SpawnCounter());
         }
     }
+    /*
+         public void Respawn()
+         {
+            for (int i = 0 ; i < 3 ; i++)
+            {
+               if(Balls[i].gameobject.activeInHierarchy)
+                    {
+            Balls[i].gameobject.Transform position = new transform position (0,4,0)
+
+        }
+
+            }
+
+         }
+    */
     private void Update()
     {
         if ((CurrentSpawned == 3)&&(!disablespeedup))

@@ -6,6 +6,7 @@ public class HealthDown : MonoBehaviour
     [SerializeField] private int LivesLeft = 3;
     [SerializeField] private List<GameObject> HealthObjects = new List<GameObject>();
     public GameManager manager;
+    public Spawnballs Spawn;
     [SerializeField]
     private GameObject Effect;
     private ParticleControler Pcon;
@@ -15,6 +16,7 @@ public class HealthDown : MonoBehaviour
     {
         Pcon = Effect.GetComponent<ParticleControler>();
         manager = GameObject.Find("Manager").GetComponent<GameManager>();
+        Spawn = GameObject.Find("Manager").GetComponent<Spawnballs>();
     }
     private void OnTriggerEnter2D(Collider2D obj)
     {
@@ -27,6 +29,8 @@ public class HealthDown : MonoBehaviour
         //Destroy(HealthObjects[(LivesLeft-1)].gameObject);
         //LivesLeft--;
         LivesLeft--;
+        Spawn.CurrentSpawned--;
+        Spawn.SpawnBall();
         //Debug.Log("triggered");
 
     }
