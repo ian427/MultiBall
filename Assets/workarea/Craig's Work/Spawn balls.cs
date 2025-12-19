@@ -31,21 +31,23 @@ public class Spawnballs : MonoBehaviour
             StartCoroutine(SpawnCounter());
         }
     }
-    /*
+    
          public void Respawn()
          {
             for (int i = 0 ; i < 3 ; i++)
             {
-               if(Balls[i].gameobject.activeInHierarchy)
-                    {
-            Balls[i].gameobject.Transform position = new transform position (0,4,0)
-
-        }
+               if(!Balls[i].gameObject.activeInHierarchy)
+               {
+               
+                    Balls[i].transform.position = new Vector3(0, 4, 0);
+                    Balls[i].SetActive(true);
+               }
+             
 
             }
 
          }
-    */
+    
     private void Update()
     {
         if ((CurrentSpawned == 3)&&(!disablespeedup))

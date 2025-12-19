@@ -30,7 +30,7 @@ public class HealthDown : MonoBehaviour
         //LivesLeft--;
         LivesLeft--;
         Spawn.CurrentSpawned--;
-        Spawn.SpawnBall();
+        Spawn.Respawn();
         //Debug.Log("triggered");
 
     }
