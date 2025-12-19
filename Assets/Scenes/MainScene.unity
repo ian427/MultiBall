@@ -628,6 +628,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2971698764932719546, guid: 21b8886a355ad86479bfc9569c0e5277, type: 3}
+      propertyPath: m_TagString
+      value: spawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998351931432418510, guid: 21b8886a355ad86479bfc9569c0e5277, type: 3}
+      propertyPath: m_TagString
+      value: spawner
+      objectReference: {fileID: 0}
     - target: {fileID: 4240013637237466219, guid: 21b8886a355ad86479bfc9569c0e5277, type: 3}
       propertyPath: sr
       value: 
@@ -639,6 +647,14 @@ PrefabInstance:
     - target: {fileID: 4306606064110319256, guid: 21b8886a355ad86479bfc9569c0e5277, type: 3}
       propertyPath: m_Name
       value: Spawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 4306606064110319256, guid: 21b8886a355ad86479bfc9569c0e5277, type: 3}
+      propertyPath: m_TagString
+      value: spawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 4876893835245362868, guid: 21b8886a355ad86479bfc9569c0e5277, type: 3}
+      propertyPath: m_TagString
+      value: spawner
       objectReference: {fileID: 0}
     - target: {fileID: 5363965802761751409, guid: 21b8886a355ad86479bfc9569c0e5277, type: 3}
       propertyPath: m_LocalPosition.x
@@ -709,6 +725,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2971698764932719546, guid: 21b8886a355ad86479bfc9569c0e5277, type: 3}
+      propertyPath: m_TagString
+      value: spawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998351931432418510, guid: 21b8886a355ad86479bfc9569c0e5277, type: 3}
+      propertyPath: m_TagString
+      value: spawner
+      objectReference: {fileID: 0}
     - target: {fileID: 4240013637237466219, guid: 21b8886a355ad86479bfc9569c0e5277, type: 3}
       propertyPath: sr
       value: 
@@ -720,6 +744,14 @@ PrefabInstance:
     - target: {fileID: 4306606064110319256, guid: 21b8886a355ad86479bfc9569c0e5277, type: 3}
       propertyPath: m_Name
       value: Spawner (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4306606064110319256, guid: 21b8886a355ad86479bfc9569c0e5277, type: 3}
+      propertyPath: m_TagString
+      value: spawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 4876893835245362868, guid: 21b8886a355ad86479bfc9569c0e5277, type: 3}
+      propertyPath: m_TagString
+      value: spawner
       objectReference: {fileID: 0}
     - target: {fileID: 5363965802761751409, guid: 21b8886a355ad86479bfc9569c0e5277, type: 3}
       propertyPath: m_LocalPosition.x
@@ -919,6 +951,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2971698764932719546, guid: 21b8886a355ad86479bfc9569c0e5277, type: 3}
+      propertyPath: m_TagString
+      value: spawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998351931432418510, guid: 21b8886a355ad86479bfc9569c0e5277, type: 3}
+      propertyPath: m_TagString
+      value: spawner
+      objectReference: {fileID: 0}
     - target: {fileID: 4240013637237466219, guid: 21b8886a355ad86479bfc9569c0e5277, type: 3}
       propertyPath: sr
       value: 
@@ -930,6 +970,14 @@ PrefabInstance:
     - target: {fileID: 4306606064110319256, guid: 21b8886a355ad86479bfc9569c0e5277, type: 3}
       propertyPath: m_Name
       value: Spawner (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4306606064110319256, guid: 21b8886a355ad86479bfc9569c0e5277, type: 3}
+      propertyPath: m_TagString
+      value: spawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 4876893835245362868, guid: 21b8886a355ad86479bfc9569c0e5277, type: 3}
+      propertyPath: m_TagString
+      value: spawner
       objectReference: {fileID: 0}
     - target: {fileID: 5363965802761751409, guid: 21b8886a355ad86479bfc9569c0e5277, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7776,10 +7824,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CollisionSound2D
   collisionSounds:
   - targetTag: Ball
-    sound: {fileID: 8300000, guid: e1afbcf9e8bf806479e616989315373a, type: 3}
+    sound: {fileID: 8300000, guid: d5bc2ebc2d117da409401894b8533a96, type: 3}
   volume: 0.5
-  minPitch: 0.6
-  maxPitch: 1.1
+  minPitch: 1
+  maxPitch: 5
 --- !u!82 &474559836
 AudioSource:
   m_ObjectHideFlags: 0
@@ -8296,6 +8344,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2971698764932719546, guid: 21b8886a355ad86479bfc9569c0e5277, type: 3}
+      propertyPath: m_TagString
+      value: spawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998351931432418510, guid: 21b8886a355ad86479bfc9569c0e5277, type: 3}
+      propertyPath: m_TagString
+      value: spawner
+      objectReference: {fileID: 0}
     - target: {fileID: 4240013637237466219, guid: 21b8886a355ad86479bfc9569c0e5277, type: 3}
       propertyPath: sr
       value: 
@@ -8307,6 +8363,14 @@ PrefabInstance:
     - target: {fileID: 4306606064110319256, guid: 21b8886a355ad86479bfc9569c0e5277, type: 3}
       propertyPath: m_Name
       value: Spawner (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4306606064110319256, guid: 21b8886a355ad86479bfc9569c0e5277, type: 3}
+      propertyPath: m_TagString
+      value: spawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 4876893835245362868, guid: 21b8886a355ad86479bfc9569c0e5277, type: 3}
+      propertyPath: m_TagString
+      value: spawner
       objectReference: {fileID: 0}
     - target: {fileID: 5363965802761751409, guid: 21b8886a355ad86479bfc9569c0e5277, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10909,6 +10973,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2971698764932719546, guid: 21b8886a355ad86479bfc9569c0e5277, type: 3}
+      propertyPath: m_TagString
+      value: spawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998351931432418510, guid: 21b8886a355ad86479bfc9569c0e5277, type: 3}
+      propertyPath: m_TagString
+      value: spawner
+      objectReference: {fileID: 0}
     - target: {fileID: 4240013637237466219, guid: 21b8886a355ad86479bfc9569c0e5277, type: 3}
       propertyPath: sr
       value: 
@@ -10920,6 +10992,14 @@ PrefabInstance:
     - target: {fileID: 4306606064110319256, guid: 21b8886a355ad86479bfc9569c0e5277, type: 3}
       propertyPath: m_Name
       value: Spawner (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4306606064110319256, guid: 21b8886a355ad86479bfc9569c0e5277, type: 3}
+      propertyPath: m_TagString
+      value: spawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 4876893835245362868, guid: 21b8886a355ad86479bfc9569c0e5277, type: 3}
+      propertyPath: m_TagString
+      value: spawner
       objectReference: {fileID: 0}
     - target: {fileID: 5363965802761751409, guid: 21b8886a355ad86479bfc9569c0e5277, type: 3}
       propertyPath: m_LocalPosition.x
