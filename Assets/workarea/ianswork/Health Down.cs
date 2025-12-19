@@ -22,7 +22,9 @@ public class HealthDown : MonoBehaviour
         obj.gameObject.SetActive(false);
         Pcon.PlayEffect();
         // HealthObjects.Remove(HealthObjects[LivesLeft])
-        Destroy(HealthObjects[(LivesLeft-1)].gameObject);
+        HealthObjects[(LivesLeft - 1)].gameObject.GetComponent<ParticleControler>().PlayEffect();
+        HealthObjects[(LivesLeft - 1)].gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        //Destroy(HealthObjects[(LivesLeft-1)].gameObject);
         LivesLeft--;
         //Debug.Log("triggered");
 
