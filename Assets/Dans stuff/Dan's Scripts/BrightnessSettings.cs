@@ -3,15 +3,28 @@ using UnityEngine.UI;
 
 public class BrightnessSettings : MonoBehaviour
 {
-    [SerializeField] private Image brightnessOverlay;
+    [SerializeField] private Image brightnessImage;
+    [SerializeField] private Slider brightnessSlider;
 
+    [Range(0f, 1f)]
+    [SerializeField] private float maxDarkness = 0.9f;
+    private float currentBrightness;
+    private float savedBrightness;
 
-    public void ChangeBrightness(float brightnessValue)
+    private void Start()
     {
-        brightnessOverlay.color = new Color(0, 0, 0, 1f - brightnessValue);
+        savedBrightness = PlayerPrefs.GetFloat("ScreenBrightness", 0f);
+        brightnessSlider.value = savedBrightness;
+        SetBrightness(savedBrightness);
+        brightnessSlider.onValueChanged.AddListener(SetBrightness);
+    }
 
-        //Color overlayColor = brightnessOverlay.color;
-        //overlayColor.a = brightnessValue;
-        //brightnessOverlay.color = overlayColor;
+    public void SetBrightness(float value)
+    {
+        PlayerPrefs.SetFloat("ScreenBrightness", value);
+        currentBrightness = Mathf.Lerp(0f, maxDarkness, value);
+        Color color = brightnessImage.color;
+        color.a = currentBrightness;
+        brightnessImage.color = color;
     }
 }
