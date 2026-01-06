@@ -22,7 +22,7 @@ public class BrightnessSettings : MonoBehaviour
     public void SetBrightness(float value)
     {
         PlayerPrefs.SetFloat("ScreenBrightness", value);
-        currentBrightness = Mathf.Lerp(0f, maxDarkness, value);
+        currentBrightness = Mathf.Lerp(maxDarkness, 0f, value);
         Color color = brightnessImage.color;
         color.a = currentBrightness;
         brightnessImage.color = color;

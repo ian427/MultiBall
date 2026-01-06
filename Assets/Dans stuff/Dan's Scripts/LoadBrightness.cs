@@ -10,7 +10,7 @@ public class LoadBrightness : MonoBehaviour
     private void Start()
     {
         loadedBrightness = PlayerPrefs.GetFloat("ScreenBrightness");
-        loadedBrightness = Mathf.Lerp(0f, maxDarkness, loadedBrightness);
+        loadedBrightness = Mathf.Lerp(maxDarkness, 0f, loadedBrightness);
         Color color = brightnessImage.color;
         color.a = loadedBrightness;
         brightnessImage.color = color;

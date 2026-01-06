@@ -1390,7 +1390,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 769905179}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0983bd46e2977694a8b0f3571a16bf15, type: 3}
   m_Name: 
@@ -1405,7 +1405,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 769905179}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0fead6e8200092444853fe672770dcdb, type: 3}
   m_Name: 
@@ -1434,6 +1434,69 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8478169865991630734, guid: 87441a85ca86213469cfbb6833e7f544, type: 3}
   m_PrefabInstance: {fileID: 1215148856}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &835476239
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 835476242}
+  - component: {fileID: 835476241}
+  - component: {fileID: 835476240}
+  m_Layer: 0
+  m_Name: SettingsScripts
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &835476240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 835476239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fead6e8200092444853fe672770dcdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BrightnessSettings
+  brightnessImage: {fileID: 661260175}
+  brightnessSlider: {fileID: 890883816}
+  maxDarkness: 0.9
+--- !u!114 &835476241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 835476239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0983bd46e2977694a8b0f3571a16bf15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VolumeSetting
+  mixer: {fileID: 24100000, guid: 4c1e601e05433a64aabc7b8d352491d9, type: 2}
+  musicBar: {fileID: 825439166}
+  sfxBar: {fileID: 1960687221}
+--- !u!4 &835476242
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 835476239}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.46252, y: -3.25279, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &887822793
 GameObject:
   m_ObjectHideFlags: 0
@@ -4385,6 +4448,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Onboarding (Mobile)
       objectReference: {fileID: 0}
+    - target: {fileID: 7387264209257210773, guid: 13ba0b7f65b88ff49813d7885912e7ba, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7655455546719109083, guid: 13ba0b7f65b88ff49813d7885912e7ba, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -4416,3 +4483,4 @@ SceneRoots:
   - {fileID: 1874855055}
   - {fileID: 1019068296}
   - {fileID: 1958363226}
+  - {fileID: 835476242}

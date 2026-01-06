@@ -335,7 +335,6 @@ GameObject:
   - component: {fileID: 1879260036}
   - component: {fileID: 1879260035}
   - component: {fileID: 1879260034}
-  - component: {fileID: 1879260033}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -343,20 +342,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1879260033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1879260032}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 351e1d40fccb5ec42b1108a011f7ae71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LoadBrightness
-  brightnessImage: {fileID: 1075826936}
-  loadedBrightness: 0
 --- !u!114 &1879260034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -520,6 +505,67 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1001 &1937674865444355077
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 433540024712137162, guid: 09d467d8da1b5934287ab54fd3c3c9b0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.33445
+      objectReference: {fileID: 0}
+    - target: {fileID: 433540024712137162, guid: 09d467d8da1b5934287ab54fd3c3c9b0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.02645
+      objectReference: {fileID: 0}
+    - target: {fileID: 433540024712137162, guid: 09d467d8da1b5934287ab54fd3c3c9b0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 433540024712137162, guid: 09d467d8da1b5934287ab54fd3c3c9b0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 433540024712137162, guid: 09d467d8da1b5934287ab54fd3c3c9b0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 433540024712137162, guid: 09d467d8da1b5934287ab54fd3c3c9b0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 433540024712137162, guid: 09d467d8da1b5934287ab54fd3c3c9b0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 433540024712137162, guid: 09d467d8da1b5934287ab54fd3c3c9b0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 433540024712137162, guid: 09d467d8da1b5934287ab54fd3c3c9b0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 433540024712137162, guid: 09d467d8da1b5934287ab54fd3c3c9b0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 470777574701855974, guid: 09d467d8da1b5934287ab54fd3c3c9b0, type: 3}
+      propertyPath: m_Name
+      value: BrightnessLoader
+      objectReference: {fileID: 0}
+    - target: {fileID: 4820660585294742588, guid: 09d467d8da1b5934287ab54fd3c3c9b0, type: 3}
+      propertyPath: brightnessImage
+      value: 
+      objectReference: {fileID: 1075826936}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 09d467d8da1b5934287ab54fd3c3c9b0, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -527,3 +573,4 @@ SceneRoots:
   - {fileID: 850800234}
   - {fileID: 1962205893}
   - {fileID: 1879260036}
+  - {fileID: 1937674865444355077}
