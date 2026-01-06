@@ -3,28 +3,30 @@ using TMPro;
 
 public class StartingCountdown : MonoBehaviour
 {
+    //The start and current time floats
     [SerializeField] private float startTime;
     [SerializeField] private float presentTime;
-
     [SerializeField] private float secondCounter;
 
+    //The canvas and accompanying objectives
     [SerializeField] private GameObject startingCanvas;
     [SerializeField] private GameObject timeTextObject;
     [SerializeField] private TMP_Text timeText;
 
+    //The started bools and matching audio sources
     [HideInInspector] public bool started;
     [SerializeField] private AudioSource secondClick;
     [SerializeField] private AudioSource buzzer;
     private bool onTwo;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    //Sets the started value to true and turns off the timeTextObject;
     void Start()
     {
         started = true;
         timeTextObject.SetActive(false);
     }
 
-    // Update is called once per frame
+    //If started is off then the time will begin counting down. If it hits 0, the starting sound plays, the main canvas is on and the time starts
     void Update()
     {
         if(started == false)
@@ -49,6 +51,7 @@ public class StartingCountdown : MonoBehaviour
         }
     }
 
+    //A function called in another script that will begin the process to start the 3 2 1 countdown
     public void StartCountdown()
     {
         started = false;

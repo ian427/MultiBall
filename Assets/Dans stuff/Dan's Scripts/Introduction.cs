@@ -3,21 +3,26 @@ using UnityEngine;
 
 public class Introduction : MonoBehaviour
 {
+    //The values and objects relating to the starting time and countdown of the first UI text
     [SerializeField] private float startTimeA;
     [SerializeField] private float presentTimeA;
     [SerializeField] private GameObject introTextA;
 
+    //The values and objects relating to the starting time and countdown of the second UI text
     [SerializeField] private float startTimeB;
     [SerializeField] private float presentTimeB;
     [SerializeField] private GameObject introTextB;
 
+    //Bools to see which intros are active or not
     [SerializeField] private bool firstIntroActive;
     [SerializeField] private bool lastIntroActive;
 
+    //Used for the computer version
     [SerializeField] private GameObject canvas;
     [SerializeField] private GameObject tapToPlay;
     [SerializeField] private StartingCountdown sc;
 
+    //A bool for skipping the intro
     [SerializeField] private bool skipped;
 
     private Coroutine nextText;
@@ -26,7 +31,7 @@ public class Introduction : MonoBehaviour
     [SerializeField] private AudioSource voiceLine1;
     [SerializeField] private AudioSource voiceLine2;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    //Starts by setting the tapToPlay overlay as true and the regular canvas as false. The time scale is stopped
     void Start()
     {
         skipped = false;
@@ -38,6 +43,7 @@ public class Introduction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Starts the game when space is pressed
         if (Input.GetKeyDown(KeyCode.Space))
         {
             OnGameStart();
@@ -48,6 +54,7 @@ public class Introduction : MonoBehaviour
             return;
         }
 
+        //If the skipped value is false, then the countdown will begin which will display the first intro text while waiting for the second one to start
         if(firstIntroActive == true && skipped == false)
         {
             if (skipped == false)
@@ -62,6 +69,7 @@ public class Introduction : MonoBehaviour
             }
         }
 
+        //Loads the second intro text and begins the next countdown that shows the other text
         if(lastIntroActive == true)
         {
             if(skipped == false)
@@ -77,6 +85,7 @@ public class Introduction : MonoBehaviour
         }
     }
 
+    //Function called when the game begins, such as starting the text countdown
     public void OnGameStart()
     {
         canvas.SetActive(true);
@@ -84,6 +93,7 @@ public class Introduction : MonoBehaviour
         StartCoroutine(beginIntroSequence());
     }
 
+    //
     private IEnumerator beginIntroSequence()
     {
         Time.timeScale = 0;
@@ -101,6 +111,7 @@ public class Introduction : MonoBehaviour
         voiceLine1.Play();
     }
 
+    //A void that is called when a button is pressed. It will skip the intro sequence. 
     public void SkipIntros()
     {
         skipped = true;
@@ -122,6 +133,7 @@ public class Introduction : MonoBehaviour
 
         sc.StartCountdown();
     }
+
     private IEnumerator ActivateNextText()
     {
         yield return new WaitForSecondsRealtime(1);
@@ -131,10 +143,13 @@ public class Introduction : MonoBehaviour
         voiceLine2.Play();
     }
 
+    //An IEnumerator that will begin the 321 countdown after the final intro text id displayed
     private IEnumerator ActivateCountdown()
     {
         yield return new WaitForSecondsRealtime(1);
         if (skipped == true) yield break;
         sc.StartCountdown();
     }
+
+    //AI assistance was used to help make adjustments so the script could function properly
 }
