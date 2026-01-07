@@ -1,36 +1,42 @@
-using UnityEngine;
+using NUnit.Framework;
+using System.Collections;
+using System.Collections.Generic;
 using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class StartingCountdown : MonoBehaviour
 {
-    //The start and current time floats
     [SerializeField] private float startTime;
     [SerializeField] private float presentTime;
+
     [SerializeField] private float secondCounter;
 
-    //The canvas and accompanying objectives
     [SerializeField] private GameObject startingCanvas;
     [SerializeField] private GameObject timeTextObject;
     [SerializeField] private TMP_Text timeText;
-
-    //The started bools and matching audio sources
+    public Button Skip;
     [HideInInspector] public bool started;
     [SerializeField] private AudioSource secondClick;
     [SerializeField] private AudioSource buzzer;
+    [SerializeField] private List<AudioSource> CountDown;
     private bool onTwo;
 
-    //Sets the started value to true and turns off the timeTextObject;
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         started = true;
         timeTextObject.SetActive(false);
+       // StartCoroutine(StartCountDown());
     }
-
-    //If started is off then the time will begin counting down. If it hits 0, the starting sound plays, the main canvas is on and the time starts
+    
+    // Update is called once per frame
     void Update()
     {
         if(started == false)
         {
+           
+            /*
             presentTime -= Time.unscaledDeltaTime;
             timeText.text = Mathf.Ceil(presentTime).ToString();
 
@@ -48,18 +54,41 @@ public class StartingCountdown : MonoBehaviour
                 startingCanvas.SetActive(false);
                 Time.timeScale = 1f;
             }
+            */
         }
     }
 
-    //A function called in another script that will begin the process to start the 3 2 1 countdown
     public void StartCountdown()
     {
-        started = false;
+        Skip.gameObject.SetActive(false);
+        //started = false;
+        
         startingCanvas.SetActive(true);
         timeTextObject.SetActive(true);
-        startTime = 3f;
-        secondCounter = 1f;
-        presentTime = startTime;
-        secondClick.Play();
+        // startTime = 3f;
+        // secondCounter = 1f;
+        //  presentTime = startTime;
+        StartCoroutine(StartMyCountDown());
+        //secondClick.Play();
+    }
+    IEnumerator StartMyCountDown()
+    {
+        Debug.Log("3");
+        timeText.text = "3";
+       CountDown[0].Play();
+        yield return new WaitForSecondsRealtime(1f);
+        Debug.Log("2");
+        timeText.text = "2";
+       CountDown[1].Play();
+        yield return new WaitForSecondsRealtime(1f);
+        Debug.Log("1");
+        timeText.text = "1";
+       CountDown[2].Play();
+        yield return new WaitForSecondsRealtime(1f);
+        startingCanvas.SetActive(false);
+        Time.timeScale = 1f;
+
+
+
     }
 }

@@ -17,6 +17,7 @@ public class SkipButton : MonoBehaviour
             skipped = true;
             intro.SkipIntros();
             sc.StartCountdown();
+           
         }
     }
 }
