@@ -693,6 +693,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DataHolder
       objectReference: {fileID: 0}
+    - target: {fileID: 2142825555500339620, guid: c1d82e30cf4ed8b43ab452e899f2c517, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6455725187510019947, guid: c1d82e30cf4ed8b43ab452e899f2c517, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.08525
