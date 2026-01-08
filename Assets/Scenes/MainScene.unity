@@ -1218,6 +1218,7 @@ MonoBehaviour:
   - {fileID: 1294476088}
   - {fileID: 1215692788}
   manager: {fileID: 0}
+  Spawn: {fileID: 0}
   Effect: {fileID: 2141654073}
 --- !u!61 &200390989
 BoxCollider2D:
@@ -2276,7 +2277,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 446b5a33c9cbd0c4396cea0197b5896b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Spawnballs
-  Ball: {fileID: 3094029569469853073, guid: 8e2e3355da42bf14396558fa1d053826, type: 3}
   spawnCountdown: 5
   MaxSpawn: 3
   CurrentSpawned: 0
@@ -2306,6 +2306,7 @@ MonoBehaviour:
   CurrentScoretxt: {fileID: 19713915}
   Pannel: {fileID: 1509653712}
   spawners: {fileID: 356040914}
+  ballspawner: {fileID: 356040910}
 --- !u!114 &356040912
 MonoBehaviour:
   m_ObjectHideFlags: 0

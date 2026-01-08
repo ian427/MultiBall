@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Spawnballs : MonoBehaviour
 {
-    [SerializeField] private GameObject Ball;
+    //[SerializeField] private GameObject Ball;
     [SerializeField] private float spawnCountdown = 0;
     [SerializeField] private int MaxSpawn = 3;
     public int CurrentSpawned = 0;
@@ -30,27 +30,37 @@ public class Spawnballs : MonoBehaviour
         {
             StartCoroutine(SpawnCounter());
         }
+        else if(EnableSpot == 3)
+        {
+            Respawn();
+        }
     }
     
          public void Respawn()
          {
-            for (int i = 0 ; i < 3 ; i++)
+            if (EnableSpot == 3)
             {
-               if(!Balls[i].gameObject.activeInHierarchy)
-               {
-               
-                    Balls[i].transform.position = new Vector3(0, 4, 0);
-                    Balls[i].SetActive(true);
-               }
-             
+                for (int i = 0; i < 3; i++)
+                {
+                    if (!Balls[i].gameObject.activeInHierarchy)
+                    {
+                        
+                        Balls[i].transform.position = new Vector3(0, 4, 0);
+                       
+                        Balls[i].SetActive(true);
+                   
+                    //CurrentSpawned++;
+                }
 
+
+                }
             }
 
          }
     
     private void Update()
     {
-        if ((CurrentSpawned == 3)&&(!disablespeedup))
+        if ((EnableSpot == 3)&&(!disablespeedup))
         {
             for (int i = 0; i < Balls.Count; i++)
             {
@@ -82,5 +92,13 @@ public class Spawnballs : MonoBehaviour
         CurrentSpawned++;
         yield return new WaitForSeconds(spawnCountdown);
         SpawnBall();
+    }
+    
+    public void Freezeballs()
+    {
+        for(int i = 0;i < rbs.Count;i++)
+        {
+            rbs[i].constraints = RigidbodyConstraints2D.FreezePosition;
+        }
     }
 }

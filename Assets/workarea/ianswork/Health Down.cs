@@ -9,7 +9,9 @@ public class HealthDown : MonoBehaviour
     public Spawnballs Spawn;
     [SerializeField]
     private GameObject Effect;
+    
     private ParticleControler Pcon;
+    private int RespawnDelay = 5; 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -21,6 +23,7 @@ public class HealthDown : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D obj)
     {
         // Destroy(obj.gameObject);
+       
         obj.gameObject.SetActive(false);
         Pcon.PlayEffect();
         // HealthObjects.Remove(HealthObjects[LivesLeft])
@@ -29,8 +32,9 @@ public class HealthDown : MonoBehaviour
         //Destroy(HealthObjects[(LivesLeft-1)].gameObject);
         //LivesLeft--;
         LivesLeft--;
-        Spawn.CurrentSpawned--;
-        Spawn.Respawn();
+        //Spawn.CurrentSpawned--;
+        StartCoroutine(StartRespawnCount());
+        
         //Debug.Log("triggered");
 
     }
@@ -47,17 +51,21 @@ public class HealthDown : MonoBehaviour
         }
     System.Collections.IEnumerator PlayAnimationCoroutine(int index)
     {
-      
-       
-        HealthObjects[(index)].gameObject.GetComponent<TestHeartControler>().PlayAnimation();
-        //Animator m_Animator = HealthObjects[(index)].gameObject.GetComponent<Animator>();
-        //yield return new WaitUntil(() => m_Animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f);
-        yield return new WaitForSeconds(1.9f);
-        HealthObjects[(index)].gameObject.GetComponent<ParticleControler>().PlayEffect();
-        HealthObjects[(index)].gameObject.GetComponent<SpriteRenderer>().enabled = false;
-     
 
+        if (index >= 0)
+        {
+            HealthObjects[(index)].gameObject.GetComponent<TestHeartControler>().PlayAnimation();
+            //Animator m_Animator = HealthObjects[(index)].gameObject.GetComponent<Animator>();
+            //yield return new WaitUntil(() => m_Animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f);
+            yield return new WaitForSeconds(1.9f);
+            HealthObjects[(index)].gameObject.GetComponent<ParticleControler>().PlayEffect();
+            HealthObjects[(index)].gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        }
 
-
+    }
+    System.Collections.IEnumerator StartRespawnCount()
+    {
+        yield return new WaitForSeconds(RespawnDelay);
+        Spawn.Respawn();
     }
 }
