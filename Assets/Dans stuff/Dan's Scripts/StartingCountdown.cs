@@ -73,15 +73,15 @@ public class StartingCountdown : MonoBehaviour
     }
     IEnumerator StartMyCountDown()
     {
-        Debug.Log("3");
+        //Debug.Log("3");
         timeText.text = "3";
        CountDown[0].Play();
         yield return new WaitForSecondsRealtime(1f);
-        Debug.Log("2");
+        //Debug.Log("2");
         timeText.text = "2";
        CountDown[1].Play();
         yield return new WaitForSecondsRealtime(1f);
-        Debug.Log("1");
+       // Debug.Log("1");
         timeText.text = "1";
        CountDown[2].Play();
         yield return new WaitForSecondsRealtime(1f);
