@@ -1218,6 +1218,7 @@ MonoBehaviour:
   - {fileID: 1294476088}
   - {fileID: 1215692788}
   manager: {fileID: 0}
+  Spawn: {fileID: 0}
   Effect: {fileID: 2141654073}
 --- !u!61 &200390989
 BoxCollider2D:
@@ -1712,6 +1713,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 348209042268842324, guid: d77addf62c5626b41972e86507e4e31e, type: 3}
+      propertyPath: m_text
+      value: 'DON''T LET THEM DROP
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 348209042268842324, guid: d77addf62c5626b41972e86507e4e31e, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 348209042268842324, guid: d77addf62c5626b41972e86507e4e31e, type: 3}
       propertyPath: m_fontAsset
       value: 
       objectReference: {fileID: 11400000, guid: c4a89dbf1f3b5e5499214ab607a4b153, type: 2}
@@ -1728,12 +1739,16 @@ PrefabInstance:
       value: 0.8117648
       objectReference: {fileID: 0}
     - target: {fileID: 348209042268842324, guid: d77addf62c5626b41972e86507e4e31e, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2702286119227091569, guid: c4a89dbf1f3b5e5499214ab607a4b153, type: 2}
+    - target: {fileID: 348209042268842324, guid: d77addf62c5626b41972e86507e4e31e, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4281052367
       objectReference: {fileID: 0}
     - target: {fileID: 348209042268842324, guid: d77addf62c5626b41972e86507e4e31e, type: 3}
       propertyPath: m_hasFontAssetChanged
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 702009766557088865, guid: d77addf62c5626b41972e86507e4e31e, type: 3}
       propertyPath: m_Pivot.x
@@ -1814,6 +1829,10 @@ PrefabInstance:
     - target: {fileID: 702009766557088865, guid: d77addf62c5626b41972e86507e4e31e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1484714710102483738, guid: d77addf62c5626b41972e86507e4e31e, type: 3}
+      propertyPath: m_text
+      value: KEEP THE BALLS UP
       objectReference: {fileID: 0}
     - target: {fileID: 1484714710102483738, guid: d77addf62c5626b41972e86507e4e31e, type: 3}
       propertyPath: m_fontAsset
@@ -1974,7 +1993,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6356445488582835623, guid: d77addf62c5626b41972e86507e4e31e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1470592328}
+    - targetCorrespondingSourceObject: {fileID: 2382341651451272276, guid: d77addf62c5626b41972e86507e4e31e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1916175783}
   m_SourcePrefab: {fileID: 100100000, guid: d77addf62c5626b41972e86507e4e31e, type: 3}
 --- !u!212 &291332256 stripped
 SpriteRenderer:
@@ -25587,6 +25612,19 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6356445488582835623, guid: d77addf62c5626b41972e86507e4e31e, type: 3}
   m_PrefabInstance: {fileID: 279041743}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1470592328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1470592327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e40d9ec50bdbe4a8ca1382b1b244f66c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
+  translationKey: KEEP_BALL_UP
 --- !u!1 &1509653709
 GameObject:
   m_ObjectHideFlags: 0
@@ -25945,6 +25983,19 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2382341651451272276, guid: d77addf62c5626b41972e86507e4e31e, type: 3}
   m_PrefabInstance: {fileID: 279041743}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1916175783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1916175782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e40d9ec50bdbe4a8ca1382b1b244f66c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
+  translationKey: DONT_DROP
 --- !u!212 &2043011521 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 7601844195993444639, guid: 21b8886a355ad86479bfc9569c0e5277, type: 3}
