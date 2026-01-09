@@ -2,14 +2,16 @@ using UnityEngine;
 
 public class TrailRendererColour : MonoBehaviour
 {
+    //The trail renderer and colour components
     private TrailRenderer tr;
     private float randomNumber;
     private string colorName;
 
+    //The gameObject and script to check ball colours
     private GameObject colorCheckOBJ;
     private BallColorChecker bcc;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    //
     void Start()
     {
         colorCheckOBJ = GameObject.Find("Manager");
@@ -19,8 +21,8 @@ public class TrailRendererColour : MonoBehaviour
         SetStartColour();
     }
 
-    // Update is called once per frame
-    
+    //Randomizes the number between 1 and 5 and sets the trail renderer's colour depending on that number
+    //The bcc has the colour bool set to true as to prevent 2 trail renderers of the same colour
     private void SetStartColour()
     {
         for (int i = 0; i < 4; i++)
@@ -65,6 +67,7 @@ public class TrailRendererColour : MonoBehaviour
 
     }
 
+    //A spare function to be called if all colours have been assigned and to prevent crashing
     private void ReturnData()
     {
         if(bcc.allColoursPicked == true)
@@ -72,4 +75,6 @@ public class TrailRendererColour : MonoBehaviour
             Debug.Log("No Colours Left");
         }
     }
+
+    //The use of AI (ChatGPT) has been used to help in the adjustments of the SetStartColour to prevent the game from breaking
 }
