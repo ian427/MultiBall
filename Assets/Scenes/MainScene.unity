@@ -347,6 +347,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BrightnessOverlay
       objectReference: {fileID: 0}
+    - target: {fileID: 6179046529156023869, guid: 1cdb338276472204b8863982ce884dbe, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7582,6 +7586,10 @@ PrefabInstance:
     - target: {fileID: 470777574701855974, guid: 09d467d8da1b5934287ab54fd3c3c9b0, type: 3}
       propertyPath: m_Name
       value: BrightnessLoader
+      objectReference: {fileID: 0}
+    - target: {fileID: 470777574701855974, guid: 09d467d8da1b5934287ab54fd3c3c9b0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4820660585294742588, guid: 09d467d8da1b5934287ab54fd3c3c9b0, type: 3}
       propertyPath: brightnessImage
