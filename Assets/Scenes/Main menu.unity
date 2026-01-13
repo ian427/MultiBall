@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 152463748}
   - component: {fileID: 152463747}
   - component: {fileID: 152463746}
+  - component: {fileID: 152463749}
   m_Layer: 0
   m_Name: wall right
   m_TagString: Untagged
@@ -256,6 +257,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &152463749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 152463745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0adb1e6b7a7dd054e83db471e35e2da5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WallBounce
+  cameraObject: {fileID: 1127708954}
+  test: {fileID: 0}
 --- !u!224 &156061234 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8533717607354794238, guid: a0b83b4a1b9e9fc40a7e2c3c188cc062, type: 3}
@@ -272,6 +287,7 @@ GameObject:
   - component: {fileID: 190669139}
   - component: {fileID: 190669138}
   - component: {fileID: 190669137}
+  - component: {fileID: 190669140}
   m_Layer: 0
   m_Name: wall up
   m_TagString: Untagged
@@ -398,6 +414,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!114 &190669140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 190669136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0adb1e6b7a7dd054e83db471e35e2da5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WallBounce
+  cameraObject: {fileID: 1127708954}
+  test: {fileID: 0}
 --- !u!1001 &346010295
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -661,11 +691,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3120462431354347577, guid: 1cdb338276472204b8863982ce884dbe, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -12
+      value: 24.190002
       objectReference: {fileID: 0}
     - target: {fileID: 3120462431354347577, guid: 1cdb338276472204b8863982ce884dbe, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -5
+      value: -2.7099915
       objectReference: {fileID: 0}
     - target: {fileID: 3120462431354347577, guid: 1cdb338276472204b8863982ce884dbe, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1367,6 +1397,7 @@ GameObject:
   - component: {fileID: 859244067}
   - component: {fileID: 859244066}
   - component: {fileID: 859244065}
+  - component: {fileID: 859244068}
   m_Layer: 0
   m_Name: wall down
   m_TagString: Untagged
@@ -1493,6 +1524,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!114 &859244068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 859244064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0adb1e6b7a7dd054e83db471e35e2da5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WallBounce
+  cameraObject: {fileID: 1127708954}
+  test: {fileID: 0}
 --- !u!1 &919185976
 GameObject:
   m_ObjectHideFlags: 0
@@ -1504,6 +1549,7 @@ GameObject:
   - component: {fileID: 919185979}
   - component: {fileID: 919185978}
   - component: {fileID: 919185977}
+  - component: {fileID: 919185980}
   m_Layer: 0
   m_Name: wall left
   m_TagString: Untagged
@@ -1630,6 +1676,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &919185980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919185976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0adb1e6b7a7dd054e83db471e35e2da5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WallBounce
+  cameraObject: {fileID: 1127708954}
+  test: {fileID: 0}
 --- !u!1 &923235454
 GameObject:
   m_ObjectHideFlags: 0
@@ -2312,6 +2372,8 @@ GameObject:
   - component: {fileID: 1127708955}
   - component: {fileID: 1127708958}
   - component: {fileID: 1127708959}
+  - component: {fileID: 1127708961}
+  - component: {fileID: 1127708960}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2450,6 +2512,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainMenu
   SceneToGoTO: 
+--- !u!114 &1127708960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1127708954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0386e810cba02db41a3293b6b36d7b8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraAnimTest
+--- !u!95 &1127708961
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1127708954}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 16bf609d2ccddb749a2a63610a534d69, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1142171360
 GameObject:
   m_ObjectHideFlags: 0
