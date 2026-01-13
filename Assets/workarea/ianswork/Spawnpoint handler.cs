@@ -78,7 +78,7 @@ public class Spawnpointhandler : MonoBehaviour
     }
     IEnumerator Spawn()
     {
-        Debug.Log("SpawnedObstical");
+        //Debug.Log("SpawnedObstical");
 
         List<Obsticalspawner> points = new List<Obsticalspawner>(obspawn); 
         for (int i = 0; i < points.Count; i++)
