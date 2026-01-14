@@ -881,6 +881,12 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 346010296}
     m_Modifications:
+    - target: {fileID: 486129487182582062, guid: 466ed6ba282411e4585650e265572a82, type: 3}
+      propertyPath: m_text
+      value: 'Close
+
+'
+      objectReference: {fileID: 0}
     - target: {fileID: 805823081861927721, guid: 466ed6ba282411e4585650e265572a82, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2086,7 +2092,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -7989324323846284488, guid: 4c1e601e05433a64aabc7b8d352491d9, type: 2}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: e0cd34ced56a0934c9962a65fe01122f, type: 3}
+  m_Resource: {fileID: 8300000, guid: 0b335b9b3423e9c4892c5ca81dcc12ff, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
