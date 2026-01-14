@@ -11,6 +11,20 @@ public class CelebrationCanvas : MonoBehaviour
         celebrationCanvas.SetActive(false);
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            newPB();
+        }
+
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            endPB();
+        }
+
+    }
+
     public void newPB()
     {
         celebrationCanvas.SetActive(true);

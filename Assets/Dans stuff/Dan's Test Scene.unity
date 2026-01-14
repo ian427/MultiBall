@@ -1320,7 +1320,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 769905179}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -7989324323846284488, guid: 4c1e601e05433a64aabc7b8d352491d9, type: 2}
   m_audioClip: {fileID: 0}
@@ -1423,7 +1423,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CelebrationCanvas
   celebrationCanvas: {fileID: 1609410692}
-  celebrationSound: {fileID: 423980646}
+  celebrationSound: {fileID: 76219076}
 --- !u!114 &825439166 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1014236450655783229, guid: 466ed6ba282411e4585650e265572a82, type: 3}
@@ -3961,7 +3961,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2470767186600617015, guid: 975e8203e72df06409f559305836e12e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3396956126477784214, guid: 975e8203e72df06409f559305836e12e, type: 3}
       propertyPath: m_Camera

@@ -27,7 +27,7 @@ public class CameraAnimTest : MonoBehaviour
     public void ShakyCam()
     {
         anim.SetBool("BallHitWall", true);
-        StartCoroutine(ResetCam());
+        //StartCoroutine(ResetCam());
     }
 
     public IEnumerator ResetCam()
