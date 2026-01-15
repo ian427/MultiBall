@@ -1325,7 +1325,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 590869156694604265, guid: 4e5b70c1a80e5c145b78d9c92e3dc75d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3822614940430603312, guid: 4e5b70c1a80e5c145b78d9c92e3dc75d, type: 3}
       propertyPath: looping
@@ -1586,6 +1586,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spark 3.0
       objectReference: {fileID: 0}
+    - target: {fileID: 8027443338595311914, guid: 2451a2a596131e34ea8c4f2217498a48, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1645,7 +1649,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2319339967034033394, guid: 49e4a2a5c47a5b24883427ebc420b350, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3101353414652850296, guid: 49e4a2a5c47a5b24883427ebc420b350, type: 3}
       propertyPath: lengthInSec
