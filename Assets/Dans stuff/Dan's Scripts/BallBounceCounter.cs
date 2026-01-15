@@ -66,7 +66,7 @@ public class BallBounceCounter : MonoBehaviour
 
     private IEnumerator turnTextOff()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(0.7f);
         rewardObject.SetActive(false);
     }
 }
