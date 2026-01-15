@@ -9,6 +9,7 @@ public class Spawnpointhandler : MonoBehaviour
     [SerializeField] private List<GameObject> SpawnPoints = new List<GameObject>();
     [SerializeField] private List<Obsticalspawner> obspawn = new List<Obsticalspawner>();
     public float respawnDelay = 5f;
+    public float StartSpawnDelay = 2f;
     [SerializeField] private int spawnAmount = 3;
     public bool CanSpawn = true;
     public enum CurrentBackground
@@ -31,7 +32,8 @@ public class Spawnpointhandler : MonoBehaviour
             obspawn.Add(SpawnPoints[i].GetComponent<Obsticalspawner>());
            
         }
-        Restart ();
+        StartCoroutine(StartSpawn());
+        
 
     }
     public int GetBackground()
@@ -93,6 +95,11 @@ public class Spawnpointhandler : MonoBehaviour
             points.RemoveAt(temp);
         }
         yield return new WaitForSeconds(respawnDelay);
+        Restart();
+    }
+    IEnumerator StartSpawn()
+    {
+        yield return new WaitForSeconds(StartSpawnDelay);
         Restart();
     }
 }
