@@ -40,6 +40,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: InFront
+    uniqueID: 1486086723
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
