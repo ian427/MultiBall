@@ -1296,7 +1296,7 @@ MonoBehaviour:
   lastIntroActive: 0
   canvas: {fileID: 165879070}
   sc: {fileID: 769905185}
-  skipped: 0
+  skipped: 1
   voiceLine1: {fileID: 423980646}
   voiceLine2: {fileID: 1470222589}
 --- !u!114 &769905187
@@ -3961,7 +3961,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2470767186600617015, guid: 975e8203e72df06409f559305836e12e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3396956126477784214, guid: 975e8203e72df06409f559305836e12e, type: 3}
       propertyPath: m_Camera
@@ -4118,6 +4118,10 @@ PrefabInstance:
     - target: {fileID: 6487313746299245606, guid: 975e8203e72df06409f559305836e12e, type: 3}
       propertyPath: InitialModule.startColor.maxGradient.m_NumColorKeys
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6597546770767994918, guid: 975e8203e72df06409f559305836e12e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
