@@ -4,6 +4,7 @@ public class celebrationfx : MonoBehaviour
 {
     [SerializeField] private GameObject celebrationCanvas;
     [SerializeField] private AudioSource celebrationSound;
+    [SerializeField] private AudioSource Backgroundmusic;
     //private bool isTriggered = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -16,8 +17,8 @@ public class celebrationfx : MonoBehaviour
         
             celebrationCanvas.SetActive(true);
            
-           // celebrationSound.Play();
-        
+           celebrationSound.Play();
+           Backgroundmusic.Stop();
        
 
     }
