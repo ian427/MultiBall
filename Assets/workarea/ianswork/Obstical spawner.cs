@@ -12,6 +12,11 @@ public class Obsticalspawner : MonoBehaviour
             obj[i].SetActive(true);
 
         }
+        for (int i = 0; i < obj.Count; i++)
+        {
+            obj[i].SetActive(false);
+
+        }
 
     }
 

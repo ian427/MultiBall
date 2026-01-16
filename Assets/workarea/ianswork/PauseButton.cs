@@ -7,7 +7,6 @@ public class PauseButton : MonoBehaviour
     //[SerializeField]private GameObject canvas;
    public void Pause( )
     {
-        Debug.Log("Pause");
         if ( ispaused )
         {
             Time.timeScale = 1;

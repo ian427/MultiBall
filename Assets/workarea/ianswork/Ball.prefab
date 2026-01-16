@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 229914708509216415}
   - component: {fileID: 7895678223036455152}
   - component: {fileID: -6435169907062287823}
+  - component: {fileID: 7296918634588117472}
   - component: {fileID: 992190961819750238}
   m_Layer: 0
   m_Name: Ball
@@ -291,6 +292,19 @@ TrailRenderer:
   m_Autodestruct: 0
   m_Emitting: 1
   m_ApplyActiveColorSpace: 1
+--- !u!114 &7296918634588117472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3094029569469853073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4118fb6ade2ee5b4094c03bc03ada1ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::effectspawner
+  effect: {fileID: 16436591311192671, guid: e9c25e505f8e3e645be8c7f4093d52d0, type: 3}
 --- !u!114 &992190961819750238
 MonoBehaviour:
   m_ObjectHideFlags: 0

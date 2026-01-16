@@ -9,10 +9,12 @@ public class Score : MonoBehaviour
     [SerializeField] private int Total;
     public bool Stopclock = false;
     public BackgroundTransition manager;
+ 
     private void Start()
     {
         manager = GameObject.Find("Manager").GetComponent<BackgroundTransition>();
         StartScore();
+       
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void StartScore()

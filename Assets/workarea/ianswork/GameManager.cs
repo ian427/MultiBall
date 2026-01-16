@@ -18,10 +18,14 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private Spawnpointhandler spawners;
     public Spawnballs ballspawner;
+    [SerializeField] private celebrationfx Celebration;
+
+
     void Start()
     {
         score = GetComponent<Score>();
         Data = GameObject.Find("DataHolder").GetComponent<DataSerilizer>();
+        
         //Pannel.enabled = true;
         int Temp;
         Temp = Data.GetHighTime();
@@ -48,6 +52,7 @@ public class GameManager : MonoBehaviour
         int newscore = score.GetScore();
         if(newscore > Highscore)
         {
+            Celebration.PlayCelebration();
             Data.HighTime = newscore;
             Data.SaveHighestime();
             //show new score
