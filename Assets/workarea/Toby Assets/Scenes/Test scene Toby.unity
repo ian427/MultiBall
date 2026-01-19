@@ -1522,6 +1522,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6065138494118067158, guid: a5bcbf94d3fb0be40bb20ce301bde76c, type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6065138494118067158, guid: a5bcbf94d3fb0be40bb20ce301bde76c, type: 3}
       propertyPath: RotationModule.enabled
       value: 0
       objectReference: {fileID: 0}
