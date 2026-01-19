@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     [SerializeField]
     private Spawnpointhandler spawners;
+    public Spawnballs ballspawner;
     void Start()
     {
         score = GetComponent<Score>();
@@ -42,6 +43,7 @@ public class GameManager : MonoBehaviour
         Pannel.enabled = true;
         score.Stopclock = true;
         spawners.CanSpawn = false;
+        ballspawner.Freezeballs();
         int Highscore = Data.GetHighTime();
         int newscore = score.GetScore();
         if(newscore > Highscore)
