@@ -131,6 +131,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ball
       objectReference: {fileID: 0}
+    - target: {fileID: 3094029569469853073, guid: 8e2e3355da42bf14396558fa1d053826, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6761106080486611622, guid: 8e2e3355da42bf14396558fa1d053826, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -3589,7 +3593,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &1651837165
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4492,7 +4496,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8343521828496446122, guid: 980e82715d93476458b84a6f09a72f2e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9183777589703495396, guid: 980e82715d93476458b84a6f09a72f2e, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'

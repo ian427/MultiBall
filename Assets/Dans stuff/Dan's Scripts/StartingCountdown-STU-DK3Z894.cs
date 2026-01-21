@@ -7,22 +7,25 @@ using UnityEngine.UI;
 
 public class StartingCountdown : MonoBehaviour
 {
+    //The start time and present times plus the second counting down
     [SerializeField] private float startTime;
     [SerializeField] private float presentTime;
-
     [SerializeField] private float secondCounter;
 
+    //Game object components relating to the text of the timer
     [SerializeField] private GameObject startingCanvas;
     [SerializeField] private GameObject timeTextObject;
     [SerializeField] private TMP_Text timeText;
     public Button Skip;
     [HideInInspector] public bool started;
+
+    //Audio sources used
     [SerializeField] private AudioSource secondClick;
     [SerializeField] private AudioSource buzzer;
     [SerializeField] private List<AudioSource> CountDown;
     private bool onTwo;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    //Start modified by a programmer
     void Start()
     {
         started = true;
@@ -30,7 +33,9 @@ public class StartingCountdown : MonoBehaviour
        // StartCoroutine(StartCountDown());
     }
     
-    // Update is called once per frame
+    //Initial code in Update typed by me
+    //Would subtract from 3 and play the sounds each second
+    //Then the buzzer would play once the round starts
     void Update()
     {
         if(started == false)
@@ -58,6 +63,8 @@ public class StartingCountdown : MonoBehaviour
         }
     }
 
+    //Function was created by me but modified by a programmer
+    //The commented out lines were my lines although the canvas and textObject lines remain active
     public void StartCountdown()
     {
         Skip.gameObject.SetActive(false);
@@ -71,6 +78,8 @@ public class StartingCountdown : MonoBehaviour
         StartCoroutine(StartMyCountDown());
         //secondClick.Play();
     }
+
+    //IEnumerator was added and script modified by one of the programmers to make the function work better
     IEnumerator StartMyCountDown()
     {
         //Debug.Log("3");
