@@ -4,14 +4,16 @@ using TMPro;
 
 public class BallBounceCounter : MonoBehaviour
 {
+    //Variables for the ball counting when it hits the platform
     private float ballCountMax;
     [SerializeField] private float ballCount;
 
+    //Variables relating to when the ball reaches 5 and displays a random message
     [SerializeField] private float randomNumber;
     [SerializeField] private GameObject rewardObject;
     [SerializeField] private TMP_Text rewardText;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    //Starts by setting the max as 5 and disabling the reward text
     void Start()
     {
         ballCountMax = 5f;
@@ -19,6 +21,7 @@ public class BallBounceCounter : MonoBehaviour
         rewardObject.SetActive(false);
     }
 
+    //Whenever the platform collides with a ball, the count is increased by 1 and then it checks to see if the count is 5
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "Ball")
@@ -28,6 +31,9 @@ public class BallBounceCounter : MonoBehaviour
         }
     }
 
+    //The random number is set as either 1, 2, 3, and 4
+    //Depending what the number is, the text will display one of these options
+    //The count then resets
     private void CountChecker()
     {
         if(ballCount == 5)
@@ -64,6 +70,7 @@ public class BallBounceCounter : MonoBehaviour
         }
     }
 
+    //Simple countdown to turn the reward text back off
     private IEnumerator turnTextOff()
     {
         yield return new WaitForSeconds(0.7f);
